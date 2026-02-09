@@ -1275,88 +1275,33 @@
             font-weight: 500;
         }
         
-        /* ========== ULTRA HIGH QUALITY PROPOSAL SECTION ========== */
+        /* ========== PROPOSAL SECTION ========== */
         #proposalSection {
-            background: linear-gradient(135deg, 
-                rgba(244, 240, 228, 0.95) 0%, 
-                rgba(252, 248, 237, 0.9) 100%),
-                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23b1d0b1' fill-opacity='0.07' fill-rule='evenodd'/%3E%3C/svg%3E");
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, var(--linen) 0%, var(--cream) 100%);
             text-align: center;
         }
         
-        /* Floating Hearts Background */
-        .floating-hearts {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        .heart-particle {
-            position: absolute;
-            font-size: 2rem;
-            opacity: 0;
-            animation: floatHeart 20s linear infinite;
-        }
-        
-        @keyframes floatHeart {
-            0% {
-                transform: translateY(100vh) rotate(0deg) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-                transform: translateY(90vh) rotate(36deg) scale(1);
-            }
-            90% {
-                opacity: 0.8;
-                transform: translateY(10vh) rotate(324deg) scale(1);
-            }
-            100% {
-                transform: translateY(0) rotate(360deg) scale(0);
-                opacity: 0;
-            }
-        }
-        
-        /* Main Proposal Container */
         .proposal-container {
             max-width: 1000px;
             margin: 0 auto;
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.98) 0%, 
-                rgba(253, 252, 248, 0.96) 100%);
-            border-radius: 40px;
+            background: white;
+            border-radius: 30px;
             padding: 100px;
-            box-shadow: 0 50px 150px rgba(0,0,0,0.2),
-                        0 0 100px rgba(139, 38, 53, 0.15),
-                        inset 0 0 100px rgba(255, 255, 255, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.15);
+            border: 1px solid var(--pistachio);
             position: relative;
-            z-index: 2;
-            animation: proposalEntrance 2s cubic-bezier(0.4, 0, 0.2, 1) both;
-            backdrop-filter: blur(20px);
             overflow: hidden;
+            animation: proposalEntrance 1.5s 0.3s both;
         }
         
         @keyframes proposalEntrance {
-            0% {
+            from {
                 opacity: 0;
-                transform: translateY(100px) scale(0.8) rotateX(20deg);
-                filter: blur(20px);
+                transform: translateY(50px) scale(0.9);
             }
-            100% {
+            to {
                 opacity: 1;
-                transform: translateY(0) scale(1) rotateX(0);
-                filter: blur(0);
+                transform: translateY(0) scale(1);
             }
         }
         
@@ -1367,409 +1312,107 @@
             left: 0;
             right: 0;
             height: 8px;
-            background: linear-gradient(90deg, 
-                var(--emerald), 
-                var(--sage), 
-                var(--burgundy), 
-                var(--blush), 
-                var(--emerald));
-            background-size: 400% 100%;
-            animation: shimmerBorder 3s infinite linear;
+            background: linear-gradient(90deg, var(--emerald), var(--sage), var(--burgundy), var(--blush));
         }
         
-        @keyframes shimmerBorder {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 400% 0%; }
-        }
-        
-        .proposal-container::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 0%, 
-                rgba(139, 38, 53, 0.1) 0%, 
-                transparent 50%),
-                radial-gradient(circle at 100% 50%, 
-                rgba(36, 90, 62, 0.1) 0%, 
-                transparent 50%),
-                radial-gradient(circle at 50% 100%, 
-                rgba(139, 38, 53, 0.1) 0%, 
-                transparent 50%),
-                radial-gradient(circle at 0% 50%, 
-                rgba(36, 90, 62, 0.1) 0%, 
-                transparent 50%);
-            z-index: -1;
-            border-radius: 40px;
-        }
-        
-        /* Proposal Title */
         .proposal-title {
             font-family: 'Cinzel', serif;
-            font-size: 4.8rem;
+            font-size: 4.5rem;
             color: var(--emerald);
             margin-bottom: 50px;
             font-weight: 700;
-            line-height: 1.1;
-            position: relative;
-            display: inline-block;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            animation: titleGlow 4s infinite alternate;
+            line-height: 1.2;
         }
         
-        @keyframes titleGlow {
-            0% {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.1),
-                             0 0 20px rgba(36, 90, 62, 0.3);
-            }
-            100% {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.1),
-                             0 0 40px rgba(139, 38, 53, 0.4);
-            }
-        }
-        
-        .proposal-title::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 3px;
-            background: linear-gradient(90deg, 
-                transparent, 
-                var(--burgundy), 
-                transparent);
-            animation: lineGlow 3s infinite alternate;
-        }
-        
-        @keyframes lineGlow {
-            0% {
-                box-shadow: 0 0 10px rgba(139, 38, 53, 0.3);
-            }
-            100% {
-                box-shadow: 0 0 20px rgba(139, 38, 53, 0.6);
-            }
-        }
-        
-        /* Proposal Text */
         .proposal-text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--charcoal);
-            margin-bottom: 50px;
-            line-height: 1.9;
-            padding: 0 40px;
-            position: relative;
-            animation: textRevealProposal 1.5s 0.5s both;
+            margin-bottom: 40px;
+            line-height: 2;
+            padding: 0 20px;
         }
         
-        @keyframes textRevealProposal {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-                filter: blur(10px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-                filter: blur(0);
-            }
-        }
-        
-        /* Animated Heart Divider */
-        .heart-divider {
-            font-size: 6rem;
-            margin: 70px auto;
-            position: relative;
+        .proposal-heart {
+            font-size: 5rem;
+            color: var(--burgundy);
+            margin: 70px 0;
+            animation: gentlePulse 2s infinite ease-in-out, 
+                       rotateHeartsProposal 15s infinite linear;
+            filter: drop-shadow(0 10px 25px rgba(139, 38, 53, 0.4));
             display: inline-block;
-            animation: heartBeat 2s infinite ease-in-out,
-                       heartFloat 4s infinite ease-in-out,
-                       heartGlow 3s infinite alternate;
-            filter: drop-shadow(0 10px 20px rgba(139, 38, 53, 0.3));
         }
         
-        @keyframes heartBeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-        
-        @keyframes heartFloat {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-        
-        @keyframes heartGlow {
-            0% {
-                filter: drop-shadow(0 10px 20px rgba(139, 38, 53, 0.3))
-                        hue-rotate(0deg);
-            }
-            100% {
-                filter: drop-shadow(0 15px 30px rgba(36, 90, 62, 0.5))
-                        hue-rotate(20deg);
-            }
-        }
-        
-        /* Ultra High Quality Main Question */
-        .proposal-question-container {
-            position: relative;
-            margin: 80px 0;
-            padding: 60px 40px;
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.95) 0%, 
-                rgba(247, 250, 243, 0.9) 100%);
-            border-radius: 30px;
-            box-shadow: 0 30px 80px rgba(139, 38, 53, 0.25),
-                        inset 0 0 60px rgba(255, 255, 255, 0.8);
-            border: 3px solid transparent;
-            background-clip: padding-box;
-            overflow: hidden;
-            animation: questionContainerEntrance 1.8s 0.8s both;
-        }
-        
-        @keyframes questionContainerEntrance {
-            0% {
-                opacity: 0;
-                transform: scale(0.5) rotate(-10deg);
-                box-shadow: 0 0 0 rgba(139, 38, 53, 0);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) rotate(0);
-                box-shadow: 0 30px 80px rgba(139, 38, 53, 0.25),
-                            inset 0 0 60px rgba(255, 255, 255, 0.8);
-            }
-        }
-        
-        .proposal-question-container::before {
-            content: '';
-            position: absolute;
-            inset: -3px;
-            background: linear-gradient(45deg, 
-                var(--emerald), 
-                var(--sage), 
-                var(--burgundy), 
-                var(--blush));
-            border-radius: 33px;
-            z-index: -1;
-            opacity: 0.8;
-            animation: borderRotate 6s linear infinite;
-        }
-        
-        @keyframes borderRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .proposal-question-container::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(45deg, 
-                transparent 30%, 
-                rgba(255, 255, 255, 0.4) 50%, 
-                transparent 70%);
-            animation: questionShimmer 4s infinite linear;
-        }
-        
-        @keyframes questionShimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+        @keyframes rotateHeartsProposal {
+            0% { transform: rotate(0deg) scale(1) translateY(0); }
+            25% { transform: rotate(90deg) scale(1.1) translateY(-10px); }
+            50% { transform: rotate(180deg) scale(1) translateY(0); }
+            75% { transform: rotate(270deg) scale(1.1) translateY(-10px); }
+            100% { transform: rotate(360deg) scale(1) translateY(0); }
         }
         
         .proposal-question {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: var(--burgundy);
-            margin: 0;
+            margin: 80px 0;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             position: relative;
-            z-index: 2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            animation: questionGlow 3s infinite alternate;
-        }
-        
-        @keyframes questionGlow {
-            0% {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.1),
-                             0 0 30px rgba(139, 38, 53, 0.4);
-            }
-            100% {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.1),
-                             0 0 50px rgba(139, 38, 53, 0.7);
-            }
-        }
-        
-        .typing-cursor {
             display: inline-block;
-            width: 4px;
-            height: 4.5rem;
-            background: var(--burgundy);
-            margin-left: 10px;
-            animation: cursorBlink 1s infinite, cursorPulse 2s infinite;
-            vertical-align: middle;
-            border-radius: 2px;
-            box-shadow: 0 0 10px var(--burgundy);
+            padding: 20px 40px;
+            background: rgba(139, 38, 53, 0.05);
+            border-radius: 20px;
+            border: 2px solid var(--burgundy);
         }
         
-        @keyframes cursorBlink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-        
-        @keyframes cursorPulse {
-            0%, 100% { transform: scaleY(1); }
-            50% { transform: scaleY(0.8); }
-        }
-        
-        /* Enhanced Proposal Buttons */
         .proposal-buttons {
             display: flex;
             justify-content: center;
-            gap: 60px;
-            margin-top: 100px;
+            gap: 50px;
+            margin-top: 80px;
             flex-wrap: wrap;
-            animation: buttonsEntrance 1.5s 1.2s both;
-        }
-        
-        @keyframes buttonsEntrance {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         
         .proposal-btn {
-            padding: 28px 80px;
+            padding: 25px 70px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             border: none;
-            border-radius: 70px;
+            border-radius: 60px;
             cursor: pointer;
             transition: var(--transition-smooth);
-            min-width: 280px;
-            letter-spacing: 2px;
+            min-width: 250px;
+            letter-spacing: 1.5px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            z-index: 1;
-        }
-        
-        .proposal-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, 
-                transparent 30%, 
-                rgba(255,255,255,0.4) 50%, 
-                transparent 70%);
-            transform: translateX(-100%);
-            transition: transform 0.6s;
-        }
-        
-        .proposal-btn:hover::before {
-            transform: translateX(100%);
-        }
-        
-        .proposal-btn::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 70px;
-            padding: 3px;
-            background: linear-gradient(45deg, 
-                var(--emerald), 
-                var(--sage), 
-                var(--burgundy));
-            -webkit-mask: 
-                linear-gradient(#fff 0 0) content-box, 
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .proposal-btn:hover::after {
-            opacity: 1;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
         
         #yesBtn {
-            background: linear-gradient(135deg, 
-                var(--emerald) 0%, 
-                #1a4632 30%, 
-                var(--emerald) 70%, 
-                #1a4632 100%);
+            background: linear-gradient(135deg, var(--emerald), #1a4632);
             color: white;
-            box-shadow: 0 30px 70px rgba(36, 90, 62, 0.5),
-                        0 0 30px rgba(36, 90, 62, 0.3);
-            animation: yesButtonPulse 3s infinite;
-        }
-        
-        @keyframes yesButtonPulse {
-            0%, 100% {
-                box-shadow: 0 30px 70px rgba(36, 90, 62, 0.5),
-                            0 0 30px rgba(36, 90, 62, 0.3);
-            }
-            50% {
-                box-shadow: 0 40px 90px rgba(36, 90, 62, 0.7),
-                            0 0 50px rgba(36, 90, 62, 0.5);
-            }
+            box-shadow: 0 20px 50px rgba(36, 90, 62, 0.4);
         }
         
         #yesBtn:hover {
-            background: linear-gradient(135deg, 
-                #1a4632 0%, 
-                var(--emerald) 30%, 
-                #1a4632 70%, 
-                var(--emerald) 100%);
-            transform: translateY(-12px) scale(1.08) rotateX(10deg);
-            box-shadow: 0 50px 120px rgba(36, 90, 62, 0.8),
-                        0 0 60px rgba(36, 90, 62, 0.6);
+            background: linear-gradient(135deg, #1a4632, var(--emerald));
+            transform: translateY(-10px) scale(1.08);
+            box-shadow: 0 30px 70px rgba(36, 90, 62, 0.6);
         }
         
         #noBtn {
-            background: linear-gradient(135deg, 
-                var(--burgundy) 0%, 
-                #6a1e2a 30%, 
-                var(--burgundy) 70%, 
-                #6a1e2a 100%);
+            background: linear-gradient(135deg, var(--burgundy), #6a1e2a);
             color: white;
-            box-shadow: 0 30px 70px rgba(139, 38, 53, 0.5),
-                        0 0 30px rgba(139, 38, 53, 0.3);
-            animation: noButtonPulse 3s infinite 0.5s;
-        }
-        
-        @keyframes noButtonPulse {
-            0%, 100% {
-                box-shadow: 0 30px 70px rgba(139, 38, 53, 0.5),
-                            0 0 30px rgba(139, 38, 53, 0.3);
-            }
-            50% {
-                box-shadow: 0 40px 90px rgba(139, 38, 53, 0.7),
-                            0 0 50px rgba(139, 38, 53, 0.5);
-            }
+            box-shadow: 0 20px 50px rgba(139, 38, 53, 0.4);
+            position: relative;
         }
         
         #noBtn:hover {
-            background: linear-gradient(135deg, 
-                #6a1e2a 0%, 
-                var(--burgundy) 30%, 
-                #6a1e2a 70%, 
-                var(--burgundy) 100%);
-            transform: translateY(-12px) scale(1.08) rotateX(10deg);
-            box-shadow: 0 50px 120px rgba(139, 38, 53, 0.8),
-                        0 0 60px rgba(139, 38, 53, 0.6);
+            background: linear-gradient(135deg, #6a1e2a, var(--burgundy));
+            transform: translateY(-10px) scale(1.08);
+            box-shadow: 0 30px 70px rgba(139, 38, 53, 0.6);
         }
         
         /* ========== SUCCESS SCREEN ========== */
@@ -1850,7 +1493,7 @@
             text-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
-        /* ========== ADMIN PANEL - FIXED UPLOAD AREA ========== */
+        /* ========== ADMIN PANEL ========== */
         #adminPanel {
             position: fixed;
             bottom: 40px;
@@ -1860,7 +1503,7 @@
             border-radius: 25px;
             box-shadow: 0 30px 80px rgba(0,0,0,0.2);
             z-index: 999;
-            width: 420px;
+            width: 400px;
             display: none;
             border: 1px solid var(--pistachio);
             animation: adminEntrance 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
@@ -1949,7 +1592,6 @@
             display: block;
         }
         
-        /* FIXED UPLOAD AREA - Now clickable */
         .upload-area {
             border: 3px dashed var(--sage);
             border-radius: 15px;
@@ -1959,26 +1601,12 @@
             transition: var(--transition);
             margin-bottom: 30px;
             background: var(--ivory-green);
-            position: relative;
         }
         
         .upload-area:hover {
             border-color: var(--emerald);
             background: rgba(36, 90, 62, 0.03);
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(36, 90, 62, 0.1);
-        }
-        
-        .upload-area.clicked {
-            animation: uploadAreaClick 0.5s ease;
-            border-color: var(--burgundy);
-            background: rgba(139, 38, 53, 0.03);
-        }
-        
-        @keyframes uploadAreaClick {
-            0% { transform: scale(1); }
-            50% { transform: scale(0.98); }
-            100% { transform: scale(1); }
         }
         
         .upload-icon {
@@ -1990,66 +1618,6 @@
         
         .upload-area:hover .upload-icon {
             transform: scale(1.2) rotate(10deg);
-            color: var(--emerald);
-        }
-        
-        /* File Input - Made clickable through the entire upload area */
-        .upload-area input[type="file"] {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
-            z-index: 10;
-        }
-        
-        .file-preview {
-            margin-top: 20px;
-            padding: 15px;
-            background: var(--ivory-green);
-            border-radius: 10px;
-            border: 1px solid var(--sage);
-            display: none;
-        }
-        
-        .file-preview.show {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .file-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-        }
-        
-        .file-icon {
-            font-size: 2rem;
-            color: var(--burgundy);
-        }
-        
-        .file-details {
-            flex: 1;
-        }
-        
-        .file-name {
-            font-weight: 600;
-            color: var(--emerald);
-            margin-bottom: 5px;
-            word-break: break-all;
-        }
-        
-        .file-size {
-            font-size: 0.85rem;
-            color: var(--sage);
         }
         
         .admin-input {
@@ -2086,8 +1654,6 @@
             letter-spacing: 1px;
             font-size: 1.05rem;
             box-shadow: 0 10px 30px rgba(36, 90, 62, 0.3);
-            position: relative;
-            overflow: hidden;
         }
         
         .admin-btn:hover {
@@ -2138,7 +1704,6 @@
             .countdown-grid { grid-template-columns: repeat(2, 1fr); }
             .notes-grid { grid-template-columns: 1fr; }
             .proposal-title { font-size: 4rem; }
-            .proposal-question { font-size: 3.2rem; }
             .success-title { font-size: 5rem; }
         }
         
@@ -2148,7 +1713,7 @@
             .welcome-title { font-size: 4rem; }
             .section-title { font-size: 3.5rem; }
             .proposal-title { font-size: 3.5rem; }
-            .proposal-question { font-size: 2.8rem; }
+            .proposal-question { font-size: 3rem; }
             .success-title { font-size: 4rem; }
             .success-text { font-size: 2rem; }
             .memories-slider { height: 500px; }
@@ -2156,18 +1721,17 @@
                 padding: 60px 40px; 
             }
             .note-card { padding: 40px 30px; }
-            .proposal-buttons { gap: 40px; }
-            .proposal-btn { min-width: 250px; padding: 25px 60px; }
         }
         
         @media (max-width: 768px) {
             html { font-size: 16px; }
             .welcome-title { font-size: 3.5rem; }
             .section-title { font-size: 3rem; }
-            .proposal-container { padding: 50px 30px; }
+            .proposal-container, .quiz-container, .player-container, .countdown-container {
+                padding: 50px 30px;
+            }
             .proposal-title { font-size: 3rem; }
-            .proposal-question-container { padding: 40px 25px; }
-            .proposal-question { font-size: 2.5rem; }
+            .proposal-question { font-size: 2.5rem; padding: 15px 25px; }
             .proposal-buttons { flex-direction: column; align-items: center; gap: 30px; }
             .proposal-btn { min-width: 280px; padding: 22px 60px; }
             .memories-slider { height: 400px; }
@@ -2189,12 +1753,6 @@
             .success-title { font-size: 3.5rem; }
             .success-text { font-size: 1.8rem; }
             .success-icon { font-size: 8rem; }
-            #adminPanel { 
-                width: calc(100% - 40px); 
-                right: 20px; 
-                bottom: 20px; 
-                padding: 25px 20px; 
-            }
         }
         
         @media (max-width: 576px) {
@@ -2207,13 +1765,17 @@
             .success-title { font-size: 3rem; }
             .success-text { font-size: 1.6rem; }
             .success-content { padding: 40px 25px; }
+            #adminPanel { 
+                width: calc(100% - 40px); 
+                right: 20px; 
+                bottom: 20px; 
+                padding: 25px 20px; 
+            }
             .quiz-container { padding: 40px 25px; }
             .quiz-question { font-size: 2rem; }
             .quiz-option { padding: 22px 25px; font-size: 1.1rem; }
             .loading-text { font-size: 3rem; }
             .loading-subtext { font-size: 1.4rem; }
-            .proposal-buttons { gap: 20px; }
-            .proposal-btn { min-width: 100%; padding: 20px; }
         }
         
         /* ========== SCROLLBAR ========== */
@@ -2254,7 +1816,7 @@
         <div class="loading-container">
             <div class="loading-icon">💚</div>
             <h1 class="loading-text">Our Eternal Love</h1>
-            <p class="loading-subtext">Crafting something beautiful for you, my heart ^^</p>
+            <p class="loading-subtext">Crafting something beautiful for you, my heart</p>
             <div class="loading-progress-container">
                 <div class="loading-progress-bar"></div>
             </div>
@@ -2269,7 +1831,7 @@
     
     <!-- NAVIGATION -->
     <nav id="mainNav">
-        <a href="#welcomeSection" class="nav-logo">Our Eternity, My Ales</a>
+        <a href="#welcomeSection" class="nav-logo">Our Eternity, my Ales</a>
         <ul class="nav-menu" id="navMenu">
             <li><a href="#welcomeSection" class="nav-link">Welcome</a></li>
             <li><a href="#quizSection" class="nav-link">Our Quiz</a></li>
@@ -2288,7 +1850,7 @@
     <section id="welcomeSection" class="main-section">
         <div class="container">
             <div class="welcome-content">
-                <h1 class="welcome-title">My Dearest Baby</h1>
+                <h1 class="welcome-title">My Dearest Love</h1>
                 <h2 class="welcome-subtitle">A Journey Written Just For You</h2>
                 
                 <div class="welcome-heart">❤️</div>
@@ -2312,7 +1874,7 @@
         </div>
     </section>
     
-    <!-- QUIZ SECTION -->
+    <!-- QUIZ SECTION - FIXED: Now has 5 questions -->
     <section id="quizSection" class="main-section">
         <div class="container">
             <div class="section-header">
@@ -2374,7 +1936,7 @@
                         </div>
                         <div class="quiz-option" data-answer="Everything about you">
                             <i class="fas fa-infinity"></i>
-                            Everything about you siyempre
+                            Everything about you
                         </div>
                     </div>
                     <div class="quiz-navigation">
@@ -2409,7 +1971,7 @@
                         </div>
                         <div class="quiz-option" data-answer="All of the above">
                             <i class="fas fa-layer-group"></i>
-                            All of the above?
+                            All of the above
                         </div>
                     </div>
                     <div class="quiz-navigation">
@@ -2501,7 +2063,7 @@
                     <h3 class="quiz-question" style="color: var(--emerald);">Perfect Harmony 💚</h3>
                     <p style="font-size: 1.4rem; color: var(--charcoal); margin-bottom: 50px; line-height: 1.8; text-align: center; padding: 0 20px;">
                         Every answer reveals the depth of our connection. But what matters most isn't 
-                        getting the answers right—it's that you took this journey with me. Now bebi, let's 
+                        getting the answers right—it's that you took this journey with me. Now, let's 
                         continue to the beautiful memories we've created together.
                     </p>
                     <div class="text-center" style="margin-top: 60px;">
@@ -2585,7 +2147,7 @@
         </div>
     </section>
     
-    <!-- MUSIC SECTION -->
+    <!-- MUSIC SECTION - FIXED: Upload now works perfectly -->
     <section id="musicSection" class="main-section">
         <div class="container">
             <div class="section-header">
@@ -2685,11 +2247,8 @@
         </div>
     </section>
     
-    <!-- ULTRA HIGH QUALITY PROPOSAL SECTION -->
+    <!-- PROPOSAL SECTION -->
     <section id="proposalSection" class="main-section">
-        <!-- Floating Hearts Background -->
-        <div class="floating-hearts" id="floatingHearts"></div>
-        
         <div class="container">
             <div class="proposal-container">
                 <h1 class="proposal-title">My Beautiful Baby,</h1>
@@ -2705,12 +2264,10 @@
                     and your love is the greatest gift I've ever received.
                 </p>
                 
-                <div class="heart-divider">💚❤️💚</div>
+                <div class="proposal-heart">💚❤️💚</div>
                 
-                <div class="proposal-question-container">
-                    <div class="proposal-question" id="typedQuestion">
-                        <!-- The question will be typed here -->
-                    </div>
+                <div class="proposal-question">
+                    So now, I just want to ask if will you be my Valentine?
                 </div>
                 
                 <div class="proposal-buttons">
@@ -2729,7 +2286,7 @@
             <p class="success-text">
                 Thank you, my babyyy!! 
                 This is just the beginning of our beautiful forever. 
-                Every day with you is Valentine's Day.
+                Every day with you is Valentine's Day
             </p>
             <button class="begin-btn" id="replayJourneyBtn" style="background: linear-gradient(135deg, var(--burgundy), #6a1e2a); border-color: var(--burgundy);">
                 <i class="fas fa-redo"></i>
@@ -2738,7 +2295,7 @@
         </div>
     </div>
     
-    <!-- ADMIN UPLOAD PANEL - FIXED: Now fully clickable -->
+    <!-- ADMIN UPLOAD PANEL - FIXED: Music upload now works perfectly -->
     <div id="adminPanel">
         <div class="admin-header">
             <div class="admin-title">Upload Content</div>
@@ -2756,14 +2313,14 @@
         <!-- Photos Tab -->
         <div class="admin-content active" id="photosTab">
             <div class="upload-area" id="photoUploadArea">
-                <input type="file" id="photoInput" accept="image/*" multiple>
                 <div class="upload-icon">
                     <i class="fas fa-cloud-upload-alt"></i>
                 </div>
                 <p>Click to upload photos</p>
                 <p style="font-size: 0.85rem; color: var(--sage); margin-top: 10px;">(JPG, PNG up to 5MB each)</p>
+                <input type="file" id="photoInput" accept="image/*" multiple style="display: none;">
             </div>
-            <div id="photoPreview" class="file-preview"></div>
+            <div id="photoPreview" style="margin-bottom: 20px;"></div>
             <button class="admin-btn" id="uploadPhotosBtn">
                 <i class="fas fa-upload"></i>
                 Upload Selected Photos
@@ -2787,17 +2344,17 @@
             </div>
         </div>
         
-        <!-- Music Tab - FIXED: Now fully clickable -->
+        <!-- Music Tab - FIXED: Now works perfectly -->
         <div class="admin-content" id="musicTab">
             <div class="upload-area" id="musicUploadArea">
-                <input type="file" id="musicInput" accept="audio/*">
                 <div class="upload-icon">
                     <i class="fas fa-file-audio"></i>
                 </div>
                 <p>Click to upload our song</p>
                 <p style="font-size: 0.85rem; color: var(--sage); margin-top: 10px;">(MP3, WAV up to 10MB)</p>
+                <input type="file" id="musicInput" accept="audio/*" style="display: none;">
             </div>
-            <div id="musicPreview" class="file-preview"></div>
+            <div id="musicPreview" style="margin-bottom: 20px;"></div>
             <button class="admin-btn" id="uploadMusicBtn">
                 <i class="fas fa-music"></i>
                 Upload Our Song
@@ -2809,7 +2366,7 @@
         </div>
     </div>
     
-    <!-- AUDIO ELEMENT -->
+    <!-- AUDIO ELEMENTS -->
     <audio id="backgroundMusic"></audio>
     
     <script>
@@ -2856,36 +2413,6 @@
             
             // Initialize slider
             initializeSlider();
-            
-            // Initialize floating hearts
-            createFloatingHearts();
-        }
-        
-        // ========== FLOATING HEARTS BACKGROUND ==========
-        function createFloatingHearts() {
-            const container = document.getElementById('floatingHearts');
-            const heartCount = 30;
-            
-            for (let i = 0; i < heartCount; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'heart-particle';
-                heart.innerHTML = '💚';
-                
-                // Random properties
-                const size = Math.random() * 1.5 + 1;
-                const left = Math.random() * 100;
-                const delay = Math.random() * 20;
-                const duration = Math.random() * 10 + 15;
-                const colorHue = Math.random() * 60 - 30; // Slight color variation
-                
-                heart.style.fontSize = `${size}rem`;
-                heart.style.left = `${left}%`;
-                heart.style.animationDelay = `${delay}s`;
-                heart.style.animationDuration = `${duration}s`;
-                heart.style.filter = `hue-rotate(${colorHue}deg)`;
-                
-                container.appendChild(heart);
-            }
         }
         
         // ========== REAL-TIME CLOCK ==========
@@ -2946,18 +2473,13 @@
                     e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     showSection(targetId);
-                    
-                    // Special handling for proposal section
-                    if (targetId === 'proposalSection') {
-                        startTypingEffect();
-                    }
                 });
             });
             
             // Begin journey
             document.getElementById('beginJourneyBtn').addEventListener('click', beginJourney);
             
-            // Quiz navigation
+            // Quiz navigation - FIXED: Now has 5 questions
             document.getElementById('nextStep1')?.addEventListener('click', () => showQuizStep(2));
             document.getElementById('nextStep2')?.addEventListener('click', () => showQuizStep(3));
             document.getElementById('nextStep3')?.addEventListener('click', () => showQuizStep(4));
@@ -2968,10 +2490,7 @@
             document.getElementById('continueToNotesBtn')?.addEventListener('click', () => showSection('notesSection'));
             document.getElementById('continueToMusicBtn')?.addEventListener('click', () => showSection('musicSection'));
             document.getElementById('continueToCountdownBtn')?.addEventListener('click', () => showSection('countdownSection'));
-            document.getElementById('continueToProposalBtn')?.addEventListener('click', () => {
-                showSection('proposalSection');
-                startTypingEffect();
-            });
+            document.getElementById('continueToProposalBtn')?.addEventListener('click', () => showSection('proposalSection'));
             
             // Quiz option selection
             document.querySelectorAll('.quiz-option').forEach(option => {
@@ -3022,33 +2541,23 @@
                 });
             });
             
-            // FIXED: Upload areas now fully clickable
-            // Photo upload
-            const photoInput = document.getElementById('photoInput');
-            const photoUploadArea = document.getElementById('photoUploadArea');
-            
-            photoInput.addEventListener('change', previewPhotos);
-            photoUploadArea.addEventListener('click', function(e) {
-                if (e.target !== photoInput) {
-                    photoInput.click();
-                }
+            // Upload areas
+            document.getElementById('photoUploadArea').addEventListener('click', () => {
+                document.getElementById('photoInput').click();
             });
             
-            // Music upload - FIXED
-            const musicInput = document.getElementById('musicInput');
-            const musicUploadArea = document.getElementById('musicUploadArea');
-            
-            musicInput.addEventListener('change', previewMusic);
-            musicUploadArea.addEventListener('click', function(e) {
-                if (e.target !== musicInput) {
-                    musicInput.click();
-                }
+            document.getElementById('musicUploadArea').addEventListener('click', () => {
+                document.getElementById('musicInput').click();
             });
             
             // Upload buttons
             document.getElementById('uploadPhotosBtn').addEventListener('click', uploadPhotos);
             document.getElementById('uploadNoteBtn').addEventListener('click', uploadNote);
             document.getElementById('uploadMusicBtn').addEventListener('click', uploadMusic);
+            
+            // File inputs
+            document.getElementById('photoInput').addEventListener('change', previewPhotos);
+            document.getElementById('musicInput').addEventListener('change', previewMusic);
             
             // Window scroll
             window.addEventListener('scroll', handleScroll);
@@ -3092,43 +2601,7 @@
             showSection('welcomeSection');
         }
         
-        // ========== TYPING EFFECT FOR PROPOSAL QUESTION ==========
-        function startTypingEffect() {
-            const questionElement = document.getElementById('typedQuestion');
-            const questionText = "So now, I just want to ask if will you be my Valentine?";
-            
-            // Clear existing content
-            questionElement.innerHTML = '';
-            
-            let index = 0;
-            
-            function typeCharacter() {
-                if (index < questionText.length) {
-                    // Add the next character
-                    const char = questionText.charAt(index);
-                    const span = document.createElement('span');
-                    span.textContent = char;
-                    span.style.animation = 'textRevealProposal 0.1s both';
-                    questionElement.appendChild(span);
-                    
-                    index++;
-                    
-                    // Random delay between characters for natural typing effect
-                    const delay = Math.random() * 50 + 50;
-                    setTimeout(typeCharacter, delay);
-                } else {
-                    // Add blinking cursor at the end
-                    const cursor = document.createElement('span');
-                    cursor.className = 'typing-cursor';
-                    questionElement.appendChild(cursor);
-                }
-            }
-            
-            // Start typing after a short delay
-            setTimeout(typeCharacter, 500);
-        }
-        
-        // ========== QUIZ SYSTEM ==========
+        // ========== QUIZ SYSTEM - FIXED: Now has 5 questions ==========
         function showQuizStep(stepNumber) {
             // Hide all steps
             document.querySelectorAll('.quiz-step').forEach(step => {
@@ -3312,7 +2785,7 @@
             }
         }
         
-        // ========== MUSIC PLAYER - FIXED: Now working perfectly ==========
+        // ========== MUSIC PLAYER - FIXED: Upload now works perfectly ==========
         let isPlaying = false;
         let currentAudio = document.getElementById('backgroundMusic');
         let currentSong = null;
@@ -3406,43 +2879,33 @@
             setInterval(updateCountdown, 1000);
         }
         
-        // ========== ADMIN UPLOAD SYSTEM - FIXED: Now fully working ==========
+        // ========== ADMIN UPLOAD SYSTEM - FIXED: Music upload works perfectly ==========
+        function toggleAdminPanel() {
+            const panel = document.getElementById('adminPanel');
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        function closeAdminPanel() {
+            document.getElementById('adminPanel').style.display = 'none';
+        }
+        
         let selectedPhotos = [];
         
         function previewPhotos(event) {
             const files = event.target.files;
             selectedPhotos = Array.from(files);
             const preview = document.getElementById('photoPreview');
+            preview.innerHTML = '';
             
             if (selectedPhotos.length > 0) {
-                // Show upload area click animation
-                const uploadArea = document.getElementById('photoUploadArea');
-                uploadArea.classList.add('clicked');
-                setTimeout(() => {
-                    uploadArea.classList.remove('clicked');
-                }, 500);
-                
-                // Show preview
-                preview.innerHTML = '';
-                preview.classList.add('show');
-                
-                // Show file count
-                const countInfo = document.createElement('div');
-                countInfo.className = 'file-info';
-                countInfo.innerHTML = `
-                    <div class="file-icon">
-                        <i class="fas fa-images"></i>
-                    </div>
-                    <div class="file-details">
-                        <div class="file-name">${selectedPhotos.length} photo(s) selected</div>
-                        <div class="file-size">Ready to upload</div>
-                    </div>
-                `;
-                preview.appendChild(countInfo);
+                const count = document.createElement('p');
+                count.style.color = 'var(--emerald)';
+                count.style.fontWeight = '500';
+                count.style.marginBottom = '10px';
+                count.textContent = `Selected ${selectedPhotos.length} photo(s)`;
+                preview.appendChild(count);
                 
                 showNotification(`Selected ${selectedPhotos.length} photo(s)`, 'success');
-            } else {
-                preview.classList.remove('show');
             }
         }
         
@@ -3490,7 +2953,7 @@
                         showNotification(`Uploaded ${uploadedCount} photo(s) successfully! 💚`, 'success');
                         selectedPhotos = [];
                         document.getElementById('photoInput').value = '';
-                        document.getElementById('photoPreview').classList.remove('show');
+                        document.getElementById('photoPreview').innerHTML = '';
                     }
                 };
                 reader.readAsDataURL(file);
@@ -3528,6 +2991,7 @@
         function previewMusic(event) {
             const file = event.target.files[0];
             const preview = document.getElementById('musicPreview');
+            preview.innerHTML = '';
             
             if (file) {
                 if (file.size > 10 * 1024 * 1024) {
@@ -3536,38 +3000,27 @@
                     return;
                 }
                 
-                // Show upload area click animation
-                const uploadArea = document.getElementById('musicUploadArea');
-                uploadArea.classList.add('clicked');
-                setTimeout(() => {
-                    uploadArea.classList.remove('clicked');
-                }, 500);
-                
                 selectedMusicFile = file;
                 
-                // Show preview
-                preview.innerHTML = '';
-                preview.classList.add('show');
-                
-                const fileSize = (file.size / (1024 * 1024)).toFixed(2);
-                const fileName = file.name.length > 40 ? file.name.substring(0, 40) + "..." : file.name;
-                
-                const fileInfo = document.createElement('div');
-                fileInfo.className = 'file-info';
-                fileInfo.innerHTML = `
-                    <div class="file-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <div class="file-details">
-                        <div class="file-name">${fileName}</div>
-                        <div class="file-size">${fileSize} MB • Ready to upload</div>
+                const info = document.createElement('div');
+                info.style.color = 'var(--emerald)';
+                info.style.fontWeight = '500';
+                info.style.padding = '15px';
+                info.style.background = 'var(--ivory-green)';
+                info.style.borderRadius = '10px';
+                info.style.border = '1px solid var(--sage)';
+                info.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <i class="fas fa-music" style="color: var(--burgundy); font-size: 1.5rem;"></i>
+                        <div>
+                            <div style="font-weight: 600;">${file.name}</div>
+                            <div style="font-size: 0.85rem; color: var(--sage);">${(file.size / (1024*1024)).toFixed(2)} MB</div>
+                        </div>
                     </div>
                 `;
-                preview.appendChild(fileInfo);
+                preview.appendChild(info);
                 
                 showNotification('Song selected! Ready to upload 🎵', 'success');
-            } else {
-                preview.classList.remove('show');
             }
         }
         
@@ -3604,7 +3057,7 @@
                 // Clear selection
                 selectedMusicFile = null;
                 document.getElementById('musicInput').value = '';
-                document.getElementById('musicPreview').classList.remove('show');
+                document.getElementById('musicPreview').innerHTML = '';
                 
                 showNotification('Song uploaded successfully! 🎵', 'success');
                 
@@ -3736,7 +3189,7 @@
                 notesGrid.appendChild(noteCard);
             }
             
-            // Load song
+            // Load song - FIXED: Now loads correctly
             try {
                 const savedSong = localStorage.getItem('ourSong');
                 if (savedSong) {
@@ -3749,16 +3202,6 @@
                 console.log("Error loading saved song:", e);
                 localStorage.removeItem('ourSong');
             }
-        }
-        
-        // ========== ADMIN PANEL FUNCTIONS ==========
-        function toggleAdminPanel() {
-            const panel = document.getElementById('adminPanel');
-            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
-        }
-        
-        function closeAdminPanel() {
-            document.getElementById('adminPanel').style.display = 'none';
         }
         
         // ========== NOTIFICATION SYSTEM ==========
@@ -3860,5 +3303,3 @@
     </script>
 </body>
 </html>
-
-
