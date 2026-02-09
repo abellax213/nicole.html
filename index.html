@@ -1,0 +1,3864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Love | For You, My Heart</title>
+    <meta name="description" content="A sophisticated digital love letter">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ========== PREMIUM COLOR PALETTE ========== */
+        :root {
+            /* Sophisticated Greens */
+            --emerald: #245a3e;
+            --sage: #7a9b76;
+            --pistachio: #b1d0b1;
+            --ivory-green: #f7faf3;
+            
+            /* Elegant Reds */
+            --burgundy: #8b2635;
+            --blush: #d4a798;
+            --rose-quartz: #f9e7e7;
+            
+            /* Neutrals */
+            --cream: #fdfcf8;
+            --linen: #f5f1eb;
+            --charcoal: #2a2a2a;
+            --gold: #b38b59;
+            
+            /* Effects */
+            --shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            --shadow-light: 0 6px 20px rgba(0, 0, 0, 0.04);
+            --transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 20px;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--ivory-green);
+            color: var(--charcoal);
+            line-height: 1.8;
+            overflow-x: hidden;
+            min-height: 100vh;
+            opacity: 0;
+            animation: fadeInBody 1s 0.5s forwards;
+        }
+        
+        @keyframes fadeInBody {
+            to { opacity: 1; }
+        }
+        
+        /* ========== ULTRA SMOOTH LOADING SCREEN ========== */
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                var(--emerald) 0%, 
+                #1a4632 25%, 
+                var(--burgundy) 50%, 
+                #6a1e2a 75%, 
+                var(--emerald) 100%);
+            background-size: 400% 400%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1.2s ease, visibility 1.2s ease;
+            animation: loadingGradient 8s infinite linear;
+        }
+        
+        @keyframes loadingGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .loading-container {
+            text-align: center;
+            position: relative;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .loading-icon {
+            font-size: 5rem;
+            color: var(--cream);
+            margin-bottom: 40px;
+            animation: gentleFloat 3s infinite ease-in-out, 
+                       gentlePulse 2s infinite ease-in-out,
+                       rotateSlow 20s infinite linear;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+        }
+        
+        @keyframes rotateSlow {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.05); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        
+        .loading-text {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: var(--cream);
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            background: linear-gradient(45deg, #fff, var(--pistachio), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: shimmer 3s infinite linear;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .loading-subtext {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--blush);
+            font-style: italic;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            animation: fadeInOut 4s infinite;
+        }
+        
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        .loading-progress-container {
+            width: 300px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 40px;
+            position: relative;
+        }
+        
+        .loading-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, 
+                var(--pistachio) 0%, 
+                var(--cream) 50%, 
+                var(--blush) 100%);
+            border-radius: 10px;
+            animation: loadingProgress 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loading-progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255,255,255,0.4) 50%, 
+                transparent 100%);
+            animation: shine 1.5s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* ========== REAL-TIME CLOCK ========== */
+        #realTimeClock {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 18px 30px;
+            border-radius: 60px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--emerald);
+            border: 1px solid rgba(36, 90, 62, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition-smooth);
+            animation: clockEntrance 1s 1s both;
+        }
+        
+        @keyframes clockEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        #realTimeClock:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            background: white;
+        }
+        
+        #realTimeClock i {
+            color: var(--burgundy);
+            animation: gentlePulse 2s infinite;
+        }
+        
+        /* ========== ELEGANT NAVIGATION ========== */
+        #mainNav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: rgba(247, 250, 243, 0.97);
+            backdrop-filter: blur(15px);
+            z-index: 99;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            border-bottom: 1px solid rgba(36, 90, 62, 0.08);
+            transition: var(--transition-smooth);
+            animation: navEntrance 1s 1.2s both;
+        }
+        
+        @keyframes navEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .nav-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.9rem;
+            color: var(--emerald);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            position: relative;
+            transition: var(--transition);
+            background: linear-gradient(45deg, var(--emerald), var(--sage));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--emerald);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 12px 0;
+            position: relative;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--emerald), var(--burgundy));
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 1px;
+        }
+        
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        
+        /* ========== MAIN SECTIONS ========== */
+        .main-section {
+            min-height: 100vh;
+            padding: 120px 5% 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .main-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        /* ========== WELCOME SECTION ========== */
+        #welcomeSection {
+            background: linear-gradient(135deg, var(--linen) 0%, var(--ivory-green) 100%);
+            text-align: center;
+        }
+        
+        .welcome-content {
+            max-width: 900px;
+            margin: 0 auto;
+            animation: contentEntrance 1.2s 0.3s both;
+        }
+        
+        @keyframes contentEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .welcome-title {
+            font-family: 'Cinzel', serif;
+            font-size: 5rem;
+            color: var(--emerald);
+            margin-bottom: 30px;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .welcome-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--burgundy), transparent);
+        }
+        
+        .welcome-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: var(--burgundy);
+            margin-bottom: 50px;
+            font-weight: 400;
+            font-style: italic;
+            animation: subtitleEntrance 1.5s 0.5s both;
+        }
+        
+        @keyframes subtitleEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(20px) rotate(-2deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0);
+            }
+        }
+        
+        .welcome-heart {
+            font-size: 4.5rem;
+            color: var(--burgundy);
+            margin: 50px 0;
+            animation: gentlePulse 2s infinite ease-in-out, 
+                       rotateHearts 10s infinite linear;
+            filter: drop-shadow(0 5px 15px rgba(139, 38, 53, 0.3));
+            display: inline-block;
+        }
+        
+        @keyframes rotateHearts {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(90deg) scale(1.1); }
+            50% { transform: rotate(180deg) scale(1); }
+            75% { transform: rotate(270deg) scale(1.1); }
+        }
+        
+        .welcome-text {
+            font-size: 1.35rem;
+            color: var(--charcoal);
+            margin-bottom: 30px;
+            line-height: 1.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            border-left: 4px solid var(--emerald);
+            animation: textReveal 1.8s 0.8s both;
+        }
+        
+        @keyframes textReveal {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .begin-btn {
+            margin-top: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: transparent;
+            color: var(--emerald);
+            border: 2px solid var(--emerald);
+            padding: 20px 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 30px rgba(36, 90, 62, 0.2);
+        }
+        
+        .begin-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255,255,255,0.4), 
+                transparent);
+            transition: left 0.7s;
+        }
+        
+        .begin-btn:hover::before {
+            left: 100%;
+        }
+        
+        .begin-btn:hover {
+            background: linear-gradient(135deg, var(--emerald), #1a4632);
+            color: white;
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(36, 90, 62, 0.4);
+            border-color: transparent;
+        }
+        
+        /* ========== QUIZ SECTION ========== */
+        #quizSection {
+            background: var(--cream);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: headerEntrance 1s 0.2s both;
+        }
+        
+        @keyframes headerEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: var(--emerald);
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--burgundy);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--burgundy);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        .quiz-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 25px;
+            padding: 80px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--pistachio);
+            position: relative;
+            overflow: hidden;
+            animation: containerEntrance 1.2s 0.4s both;
+        }
+        
+        @keyframes containerEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .quiz-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--emerald), var(--burgundy));
+        }
+        
+        .quiz-step {
+            display: none;
+            animation: quizStepEntrance 0.8s ease both;
+        }
+        
+        @keyframes quizStepEntrance {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .quiz-step.active {
+            display: block;
+        }
+        
+        .quiz-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--emerald);
+            margin-bottom: 60px;
+            line-height: 1.4;
+            font-weight: 600;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .quiz-options {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 70px;
+        }
+        
+        .quiz-option {
+            background: var(--ivory-green);
+            border: 2px solid var(--sage);
+            padding: 28px 35px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quiz-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--pistachio), transparent);
+            transition: width 0.5s ease;
+            z-index: 1;
+        }
+        
+        .quiz-option:hover::before {
+            width: 100%;
+        }
+        
+        .quiz-option > * {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quiz-option:hover {
+            border-color: var(--emerald);
+            transform: translateX(15px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(36, 90, 62, 0.15);
+        }
+        
+        .quiz-option.selected {
+            background: var(--pistachio);
+            border-color: var(--emerald);
+            box-shadow: 0 10px 30px rgba(36, 90, 62, 0.2);
+            transform: translateX(10px);
+        }
+        
+        .quiz-option i {
+            color: var(--burgundy);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .quiz-option:hover i {
+            transform: scale(1.3);
+        }
+        
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 50px;
+            border-top: 1px solid var(--pistachio);
+        }
+        
+        .quiz-progress {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--emerald);
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+        
+        .quiz-progress-bar {
+            width: 200px;
+            height: 6px;
+            background: var(--ivory-green);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        
+        .quiz-progress-fill {
+            height: 100%;
+            width: 20%;
+            background: linear-gradient(90deg, var(--emerald), var(--sage));
+            border-radius: 3px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .quiz-next-btn {
+            padding: 18px 45px;
+            background: linear-gradient(135deg, var(--emerald), #1a4632);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(36, 90, 62, 0.3);
+        }
+        
+        .quiz-next-btn:hover:not(:disabled) {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(36, 90, 62, 0.4);
+        }
+        
+        .quiz-next-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* ========== MEMORIES SECTION ========== */
+        #memoriesSection {
+            background: linear-gradient(135deg, var(--ivory-green) 0%, var(--linen) 100%);
+        }
+        
+        .memories-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .memories-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+            height: 600px;
+            margin-bottom: 80px;
+            animation: sliderEntrance 1.2s 0.3s both;
+        }
+        
+        @keyframes sliderEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .memories-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .memory-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .memory-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 1.2s ease;
+        }
+        
+        .memory-slide:hover .memory-img {
+            transform: scale(1.1);
+        }
+        
+        .memory-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 50px;
+            transform: translateY(100%);
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .memory-slide:hover .memory-overlay {
+            transform: translateY(0);
+        }
+        
+        .memory-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .memory-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            opacity: 0.9;
+            color: var(--pistachio);
+        }
+        
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+        
+        .slider-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--sage);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+        
+        .slider-dot::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            transition: border-color 0.3s ease;
+        }
+        
+        .slider-dot:hover::after {
+            border-color: var(--emerald);
+        }
+        
+        .slider-dot.active {
+            background: var(--emerald);
+            transform: scale(1.4);
+        }
+        
+        /* ========== LOVE NOTES SECTION ========== */
+        #notesSection {
+            background: var(--cream);
+        }
+        
+        .notes-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .note-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            transition: var(--transition-smooth);
+            border-top: 5px solid var(--burgundy);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            animation: noteCardEntrance 0.8s ease both;
+            animation-delay: calc(var(--index) * 0.1s);
+        }
+        
+        @keyframes noteCardEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(30px) rotate(-2deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0);
+            }
+        }
+        
+        .note-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--burgundy), var(--emerald));
+        }
+        
+        .note-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+        }
+        
+        .note-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--burgundy);
+            margin-bottom: 30px;
+            display: block;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+        
+        .note-content {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+            margin-bottom: 40px;
+            flex-grow: 1;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .note-content::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 4rem;
+            color: var(--sage);
+            opacity: 0.3;
+            font-family: serif;
+        }
+        
+        .note-icon {
+            color: var(--emerald);
+            font-size: 1.8rem;
+            align-self: flex-end;
+            transition: transform 0.5s ease;
+        }
+        
+        .note-card:hover .note-icon {
+            transform: rotate(360deg) scale(1.3);
+        }
+        
+        /* ========== MUSIC SECTION ========== */
+        #musicSection {
+            background: linear-gradient(135deg, var(--emerald) 0%, #1a4632 100%);
+            color: white;
+        }
+        
+        .player-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            border-radius: 30px;
+            padding: 80px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: playerEntrance 1.2s 0.3s both;
+        }
+        
+        @keyframes playerEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(40px) rotate(-1deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0);
+            }
+        }
+        
+        .player-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--burgundy), var(--pistachio), var(--burgundy));
+        }
+        
+        .album-art {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--pistachio) 100%);
+            border-radius: 50%;
+            margin: 0 auto 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .album-art::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(transparent, rgba(255,255,255,0.2), transparent);
+            animation: rotateAlbum 10s linear infinite;
+        }
+        
+        @keyframes rotateAlbum {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .album-art:hover {
+            transform: rotate(15deg) scale(1.08);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+        
+        .album-art i {
+            font-size: 5rem;
+            color: white;
+            position: relative;
+            z-index: 2;
+            animation: musicNotePulse 2s infinite ease-in-out;
+        }
+        
+        @keyframes musicNotePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .player-info {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .player-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .player-artist {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+        }
+        
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .player-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .player-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.15) rotate(10deg);
+        }
+        
+        .player-btn-main {
+            width: 100px;
+            height: 100px;
+            font-size: 2.5rem;
+            background: var(--burgundy);
+            border: none;
+        }
+        
+        .progress-container {
+            margin: 60px 0;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar:hover .progress {
+            height: 8px;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--burgundy), var(--blush));
+            width: 0%;
+            transition: width 0.1s linear;
+            border-radius: 3px;
+            position: relative;
+        }
+        
+        .progress::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* ========== COUNTDOWN SECTION ========== */
+        #countdownSection {
+            background: var(--linen);
+        }
+        
+        .countdown-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            padding: 80px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+            border: 1px solid var(--pistachio);
+            position: relative;
+            overflow: hidden;
+            animation: countdownEntrance 1.2s 0.3s both;
+        }
+        
+        @keyframes countdownEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .countdown-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--emerald), var(--sage), var(--burgundy));
+        }
+        
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 70px 0;
+        }
+        
+        .countdown-unit {
+            background: linear-gradient(135deg, var(--emerald) 0%, #1a4632 100%);
+            padding: 60px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            animation: countdownUnitEntrance 0.8s ease both;
+            animation-delay: calc(var(--index) * 0.1s);
+        }
+        
+        @keyframes countdownUnitEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .countdown-unit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--burgundy);
+        }
+        
+        .countdown-unit:hover {
+            transform: translateY(-15px) scale(1.05);
+            background: linear-gradient(135deg, #1a4632 0%, var(--emerald) 100%);
+            box-shadow: 0 30px 60px rgba(36, 90, 62, 0.3);
+        }
+        
+        .countdown-value {
+            font-family: 'Cinzel', serif;
+            font-size: 4.5rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .countdown-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+        }
+        
+        /* ========== ULTRA HIGH QUALITY PROPOSAL SECTION ========== */
+        #proposalSection {
+            background: linear-gradient(135deg, 
+                rgba(244, 240, 228, 0.95) 0%, 
+                rgba(252, 248, 237, 0.9) 100%),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23b1d0b1' fill-opacity='0.07' fill-rule='evenodd'/%3E%3C/svg%3E");
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        /* Floating Hearts Background */
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .heart-particle {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0;
+            animation: floatHeart 20s linear infinite;
+        }
+        
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+                transform: translateY(90vh) rotate(36deg) scale(1);
+            }
+            90% {
+                opacity: 0.8;
+                transform: translateY(10vh) rotate(324deg) scale(1);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        /* Main Proposal Container */
+        .proposal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.98) 0%, 
+                rgba(253, 252, 248, 0.96) 100%);
+            border-radius: 40px;
+            padding: 100px;
+            box-shadow: 0 50px 150px rgba(0,0,0,0.2),
+                        0 0 100px rgba(139, 38, 53, 0.15),
+                        inset 0 0 100px rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 2;
+            animation: proposalEntrance 2s cubic-bezier(0.4, 0, 0.2, 1) both;
+            backdrop-filter: blur(20px);
+            overflow: hidden;
+        }
+        
+        @keyframes proposalEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(100px) scale(0.8) rotateX(20deg);
+                filter: blur(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotateX(0);
+                filter: blur(0);
+            }
+        }
+        
+        .proposal-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                var(--emerald), 
+                var(--sage), 
+                var(--burgundy), 
+                var(--blush), 
+                var(--emerald));
+            background-size: 400% 100%;
+            animation: shimmerBorder 3s infinite linear;
+        }
+        
+        @keyframes shimmerBorder {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 400% 0%; }
+        }
+        
+        .proposal-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, 
+                rgba(139, 38, 53, 0.1) 0%, 
+                transparent 50%),
+                radial-gradient(circle at 100% 50%, 
+                rgba(36, 90, 62, 0.1) 0%, 
+                transparent 50%),
+                radial-gradient(circle at 50% 100%, 
+                rgba(139, 38, 53, 0.1) 0%, 
+                transparent 50%),
+                radial-gradient(circle at 0% 50%, 
+                rgba(36, 90, 62, 0.1) 0%, 
+                transparent 50%);
+            z-index: -1;
+            border-radius: 40px;
+        }
+        
+        /* Proposal Title */
+        .proposal-title {
+            font-family: 'Cinzel', serif;
+            font-size: 4.8rem;
+            color: var(--emerald);
+            margin-bottom: 50px;
+            font-weight: 700;
+            line-height: 1.1;
+            position: relative;
+            display: inline-block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: titleGlow 4s infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            0% {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.1),
+                             0 0 20px rgba(36, 90, 62, 0.3);
+            }
+            100% {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.1),
+                             0 0 40px rgba(139, 38, 53, 0.4);
+            }
+        }
+        
+        .proposal-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--burgundy), 
+                transparent);
+            animation: lineGlow 3s infinite alternate;
+        }
+        
+        @keyframes lineGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(139, 38, 53, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(139, 38, 53, 0.6);
+            }
+        }
+        
+        /* Proposal Text */
+        .proposal-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--charcoal);
+            margin-bottom: 50px;
+            line-height: 1.9;
+            padding: 0 40px;
+            position: relative;
+            animation: textRevealProposal 1.5s 0.5s both;
+        }
+        
+        @keyframes textRevealProposal {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+                filter: blur(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+        
+        /* Animated Heart Divider */
+        .heart-divider {
+            font-size: 6rem;
+            margin: 70px auto;
+            position: relative;
+            display: inline-block;
+            animation: heartBeat 2s infinite ease-in-out,
+                       heartFloat 4s infinite ease-in-out,
+                       heartGlow 3s infinite alternate;
+            filter: drop-shadow(0 10px 20px rgba(139, 38, 53, 0.3));
+        }
+        
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        @keyframes heartFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        @keyframes heartGlow {
+            0% {
+                filter: drop-shadow(0 10px 20px rgba(139, 38, 53, 0.3))
+                        hue-rotate(0deg);
+            }
+            100% {
+                filter: drop-shadow(0 15px 30px rgba(36, 90, 62, 0.5))
+                        hue-rotate(20deg);
+            }
+        }
+        
+        /* Ultra High Quality Main Question */
+        .proposal-question-container {
+            position: relative;
+            margin: 80px 0;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.95) 0%, 
+                rgba(247, 250, 243, 0.9) 100%);
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(139, 38, 53, 0.25),
+                        inset 0 0 60px rgba(255, 255, 255, 0.8);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            overflow: hidden;
+            animation: questionContainerEntrance 1.8s 0.8s both;
+        }
+        
+        @keyframes questionContainerEntrance {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotate(-10deg);
+                box-shadow: 0 0 0 rgba(139, 38, 53, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0);
+                box-shadow: 0 30px 80px rgba(139, 38, 53, 0.25),
+                            inset 0 0 60px rgba(255, 255, 255, 0.8);
+            }
+        }
+        
+        .proposal-question-container::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(45deg, 
+                var(--emerald), 
+                var(--sage), 
+                var(--burgundy), 
+                var(--blush));
+            border-radius: 33px;
+            z-index: -1;
+            opacity: 0.8;
+            animation: borderRotate 6s linear infinite;
+        }
+        
+        @keyframes borderRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .proposal-question-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.4) 50%, 
+                transparent 70%);
+            animation: questionShimmer 4s infinite linear;
+        }
+        
+        @keyframes questionShimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .proposal-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--burgundy);
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: questionGlow 3s infinite alternate;
+        }
+        
+        @keyframes questionGlow {
+            0% {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.1),
+                             0 0 30px rgba(139, 38, 53, 0.4);
+            }
+            100% {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.1),
+                             0 0 50px rgba(139, 38, 53, 0.7);
+            }
+        }
+        
+        .typing-cursor {
+            display: inline-block;
+            width: 4px;
+            height: 4.5rem;
+            background: var(--burgundy);
+            margin-left: 10px;
+            animation: cursorBlink 1s infinite, cursorPulse 2s infinite;
+            vertical-align: middle;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--burgundy);
+        }
+        
+        @keyframes cursorBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        @keyframes cursorPulse {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.8); }
+        }
+        
+        /* Enhanced Proposal Buttons */
+        .proposal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 100px;
+            flex-wrap: wrap;
+            animation: buttonsEntrance 1.5s 1.2s both;
+        }
+        
+        @keyframes buttonsEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .proposal-btn {
+            padding: 28px 80px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 70px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            min-width: 280px;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            z-index: 1;
+        }
+        
+        .proposal-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255,255,255,0.4) 50%, 
+                transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .proposal-btn:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .proposal-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 70px;
+            padding: 3px;
+            background: linear-gradient(45deg, 
+                var(--emerald), 
+                var(--sage), 
+                var(--burgundy));
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .proposal-btn:hover::after {
+            opacity: 1;
+        }
+        
+        #yesBtn {
+            background: linear-gradient(135deg, 
+                var(--emerald) 0%, 
+                #1a4632 30%, 
+                var(--emerald) 70%, 
+                #1a4632 100%);
+            color: white;
+            box-shadow: 0 30px 70px rgba(36, 90, 62, 0.5),
+                        0 0 30px rgba(36, 90, 62, 0.3);
+            animation: yesButtonPulse 3s infinite;
+        }
+        
+        @keyframes yesButtonPulse {
+            0%, 100% {
+                box-shadow: 0 30px 70px rgba(36, 90, 62, 0.5),
+                            0 0 30px rgba(36, 90, 62, 0.3);
+            }
+            50% {
+                box-shadow: 0 40px 90px rgba(36, 90, 62, 0.7),
+                            0 0 50px rgba(36, 90, 62, 0.5);
+            }
+        }
+        
+        #yesBtn:hover {
+            background: linear-gradient(135deg, 
+                #1a4632 0%, 
+                var(--emerald) 30%, 
+                #1a4632 70%, 
+                var(--emerald) 100%);
+            transform: translateY(-12px) scale(1.08) rotateX(10deg);
+            box-shadow: 0 50px 120px rgba(36, 90, 62, 0.8),
+                        0 0 60px rgba(36, 90, 62, 0.6);
+        }
+        
+        #noBtn {
+            background: linear-gradient(135deg, 
+                var(--burgundy) 0%, 
+                #6a1e2a 30%, 
+                var(--burgundy) 70%, 
+                #6a1e2a 100%);
+            color: white;
+            box-shadow: 0 30px 70px rgba(139, 38, 53, 0.5),
+                        0 0 30px rgba(139, 38, 53, 0.3);
+            animation: noButtonPulse 3s infinite 0.5s;
+        }
+        
+        @keyframes noButtonPulse {
+            0%, 100% {
+                box-shadow: 0 30px 70px rgba(139, 38, 53, 0.5),
+                            0 0 30px rgba(139, 38, 53, 0.3);
+            }
+            50% {
+                box-shadow: 0 40px 90px rgba(139, 38, 53, 0.7),
+                            0 0 50px rgba(139, 38, 53, 0.5);
+            }
+        }
+        
+        #noBtn:hover {
+            background: linear-gradient(135deg, 
+                #6a1e2a 0%, 
+                var(--burgundy) 30%, 
+                #6a1e2a 70%, 
+                var(--burgundy) 100%);
+            transform: translateY(-12px) scale(1.08) rotateX(10deg);
+            box-shadow: 0 50px 120px rgba(139, 38, 53, 0.8),
+                        0 0 60px rgba(139, 38, 53, 0.6);
+        }
+        
+        /* ========== SUCCESS SCREEN ========== */
+        #successScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--emerald) 0%, var(--burgundy) 100%);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9998;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        
+        .success-content {
+            max-width: 900px;
+            animation: successEntrance 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+        }
+        
+        @keyframes successEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(100px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .success-icon {
+            font-size: 10rem;
+            margin-bottom: 50px;
+            animation: successFloat 4s infinite ease-in-out, 
+                       successPulse 3s infinite ease-in-out;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+        }
+        
+        @keyframes successFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+        
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.9; }
+        }
+        
+        .success-title {
+            font-family: 'Cinzel', serif;
+            font-size: 6rem;
+            margin-bottom: 40px;
+            letter-spacing: 3px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            background: linear-gradient(45deg, white, var(--pistachio));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .success-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            line-height: 1.8;
+            margin-bottom: 70px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* ========== ADMIN PANEL - FIXED UPLOAD AREA ========== */
+        #adminPanel {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+            z-index: 999;
+            width: 420px;
+            display: none;
+            border: 1px solid var(--pistachio);
+            animation: adminEntrance 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+        }
+        
+        @keyframes adminEntrance {
+            from {
+                opacity: 0;
+                transform: translateY(100px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--pistachio);
+        }
+        
+        .admin-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--emerald);
+        }
+        
+        .close-admin {
+            background: none;
+            border: none;
+            color: var(--burgundy);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-admin:hover {
+            transform: rotate(90deg);
+            background: rgba(139, 38, 53, 0.1);
+        }
+        
+        .admin-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .admin-tab {
+            background: var(--ivory-green);
+            border: 1px solid var(--sage);
+            color: var(--emerald);
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            flex: 1;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .admin-tab.active {
+            background: linear-gradient(135deg, var(--emerald), #1a4632);
+            color: white;
+            border-color: var(--emerald);
+            box-shadow: 0 5px 20px rgba(36, 90, 62, 0.3);
+        }
+        
+        .admin-content {
+            display: none;
+        }
+        
+        .admin-content.active {
+            display: block;
+        }
+        
+        /* FIXED UPLOAD AREA - Now clickable */
+        .upload-area {
+            border: 3px dashed var(--sage);
+            border-radius: 15px;
+            padding: 50px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 30px;
+            background: var(--ivory-green);
+            position: relative;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--emerald);
+            background: rgba(36, 90, 62, 0.03);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(36, 90, 62, 0.1);
+        }
+        
+        .upload-area.clicked {
+            animation: uploadAreaClick 0.5s ease;
+            border-color: var(--burgundy);
+            background: rgba(139, 38, 53, 0.03);
+        }
+        
+        @keyframes uploadAreaClick {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.98); }
+            100% { transform: scale(1); }
+        }
+        
+        .upload-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--sage);
+            transition: transform 0.5s ease;
+        }
+        
+        .upload-area:hover .upload-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--emerald);
+        }
+        
+        /* File Input - Made clickable through the entire upload area */
+        .upload-area input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .file-preview {
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--ivory-green);
+            border-radius: 10px;
+            border: 1px solid var(--sage);
+            display: none;
+        }
+        
+        .file-preview.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        .file-icon {
+            font-size: 2rem;
+            color: var(--burgundy);
+        }
+        
+        .file-details {
+            flex: 1;
+        }
+        
+        .file-name {
+            font-weight: 600;
+            color: var(--emerald);
+            margin-bottom: 5px;
+            word-break: break-all;
+        }
+        
+        .file-size {
+            font-size: 0.85rem;
+            color: var(--sage);
+        }
+        
+        .admin-input {
+            width: 100%;
+            padding: 18px 25px;
+            border-radius: 10px;
+            border: 1px solid var(--sage);
+            background: var(--ivory-green);
+            color: var(--charcoal);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            transition: var(--transition);
+            resize: vertical;
+        }
+        
+        .admin-input:focus {
+            outline: none;
+            border-color: var(--emerald);
+            box-shadow: 0 0 0 3px rgba(36, 90, 62, 0.1);
+        }
+        
+        .admin-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--emerald), #1a4632);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 1px;
+            font-size: 1.05rem;
+            box-shadow: 0 10px 30px rgba(36, 90, 62, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .admin-btn:hover {
+            background: linear-gradient(135deg, #1a4632, var(--emerald));
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(36, 90, 62, 0.4);
+        }
+        
+        .admin-instructions {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid var(--pistachio);
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            line-height: 1.7;
+        }
+        
+        /* ========== FIXED ANIMATIONS ========== */
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(40px) scale(0.95); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+        
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+        
+        @keyframes loadingProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 1200px) {
+            html { font-size: 18px; }
+            .countdown-grid { grid-template-columns: repeat(2, 1fr); }
+            .notes-grid { grid-template-columns: 1fr; }
+            .proposal-title { font-size: 4rem; }
+            .proposal-question { font-size: 3.2rem; }
+            .success-title { font-size: 5rem; }
+        }
+        
+        @media (max-width: 992px) {
+            html { font-size: 17px; }
+            .nav-menu { display: none; }
+            .welcome-title { font-size: 4rem; }
+            .section-title { font-size: 3.5rem; }
+            .proposal-title { font-size: 3.5rem; }
+            .proposal-question { font-size: 2.8rem; }
+            .success-title { font-size: 4rem; }
+            .success-text { font-size: 2rem; }
+            .memories-slider { height: 500px; }
+            .quiz-container, .player-container, .countdown-container, .proposal-container { 
+                padding: 60px 40px; 
+            }
+            .note-card { padding: 40px 30px; }
+            .proposal-buttons { gap: 40px; }
+            .proposal-btn { min-width: 250px; padding: 25px 60px; }
+        }
+        
+        @media (max-width: 768px) {
+            html { font-size: 16px; }
+            .welcome-title { font-size: 3.5rem; }
+            .section-title { font-size: 3rem; }
+            .proposal-container { padding: 50px 30px; }
+            .proposal-title { font-size: 3rem; }
+            .proposal-question-container { padding: 40px 25px; }
+            .proposal-question { font-size: 2.5rem; }
+            .proposal-buttons { flex-direction: column; align-items: center; gap: 30px; }
+            .proposal-btn { min-width: 280px; padding: 22px 60px; }
+            .memories-slider { height: 400px; }
+            .countdown-grid { grid-template-columns: 1fr; }
+            .countdown-unit { padding: 50px 25px; }
+            .countdown-value { font-size: 4rem; }
+            .main-section { padding: 100px 5% 60px; }
+            #realTimeClock { 
+                top: 20px; 
+                right: 20px; 
+                padding: 15px 25px; 
+                font-size: 1rem; 
+            }
+            .notes-grid { grid-template-columns: 1fr; }
+            .player-controls { gap: 25px; }
+            .player-btn { width: 70px; height: 70px; font-size: 1.6rem; }
+            .player-btn-main { width: 85px; height: 85px; font-size: 2.2rem; }
+            .album-art { width: 200px; height: 200px; }
+            .success-title { font-size: 3.5rem; }
+            .success-text { font-size: 1.8rem; }
+            .success-icon { font-size: 8rem; }
+            #adminPanel { 
+                width: calc(100% - 40px); 
+                right: 20px; 
+                bottom: 20px; 
+                padding: 25px 20px; 
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .welcome-title { font-size: 3rem; }
+            .welcome-subtitle { font-size: 2.2rem; }
+            .section-title { font-size: 2.5rem; }
+            .proposal-title { font-size: 2.5rem; }
+            .proposal-question { font-size: 2rem; }
+            .proposal-container { padding: 40px 25px; }
+            .success-title { font-size: 3rem; }
+            .success-text { font-size: 1.6rem; }
+            .success-content { padding: 40px 25px; }
+            .quiz-container { padding: 40px 25px; }
+            .quiz-question { font-size: 2rem; }
+            .quiz-option { padding: 22px 25px; font-size: 1.1rem; }
+            .loading-text { font-size: 3rem; }
+            .loading-subtext { font-size: 1.4rem; }
+            .proposal-buttons { gap: 20px; }
+            .proposal-btn { min-width: 100%; padding: 20px; }
+        }
+        
+        /* ========== SCROLLBAR ========== */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--ivory-green);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--sage), var(--emerald));
+            border-radius: 6px;
+            border: 3px solid var(--ivory-green);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(var(--emerald), var(--sage));
+        }
+        
+        /* ========== SELECTION ========== */
+        ::selection {
+            background: rgba(139, 38, 53, 0.3);
+            color: var(--charcoal);
+        }
+        
+        /* ========== SMOOTH SCROLLING ========== */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- LOADING SCREEN -->
+    <div id="loadingScreen">
+        <div class="loading-container">
+            <div class="loading-icon">💚</div>
+            <h1 class="loading-text">Our Eternal Love</h1>
+            <p class="loading-subtext">Crafting something beautiful for you, my heart ^^</p>
+            <div class="loading-progress-container">
+                <div class="loading-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- REAL-TIME CLOCK -->
+    <div id="realTimeClock">
+        <i class="fas fa-clock"></i>
+        <span id="currentTime">Loading...</span>
+    </div>
+    
+    <!-- NAVIGATION -->
+    <nav id="mainNav">
+        <a href="#welcomeSection" class="nav-logo">Our Eternity</a>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#welcomeSection" class="nav-link">Welcome</a></li>
+            <li><a href="#quizSection" class="nav-link">Our Quiz</a></li>
+            <li><a href="#memoriesSection" class="nav-link">Memories</a></li>
+            <li><a href="#notesSection" class="nav-link">Love Notes</a></li>
+            <li><a href="#musicSection" class="nav-link">Our Song</a></li>
+            <li><a href="#countdownSection" class="nav-link">Countdown</a></li>
+            <li><a href="#proposalSection" class="nav-link">Forever</a></li>
+        </ul>
+        <button class="begin-btn" id="adminToggleBtn" style="padding: 12px 30px; font-size: 0.9rem;">
+            <i class="fas fa-cloud-upload-alt"></i> Upload Content
+        </button>
+    </nav>
+    
+    <!-- WELCOME SECTION -->
+    <section id="welcomeSection" class="main-section">
+        <div class="container">
+            <div class="welcome-content">
+                <h1 class="welcome-title">My Dearest Love</h1>
+                <h2 class="welcome-subtitle">A Journey Written Just For You</h2>
+                
+                <div class="welcome-heart">❤️</div>
+                
+                <p class="welcome-text">
+                    Before we reach the most important question baby, I want to take you on a journey through 
+                    this simple site I've made hehe. Every moment with you has been a treasure, and I've created this 
+                    special place to celebrate the love we share, kaya sana um-oo ka. (kala mo talaga e 'no).
+                </p>
+                
+                <p class="welcome-text">
+                    This isn't just a website—it's my heart poured into digital form. A sanctuary where 
+                    our memories live, and our love is celebrated in simple matters.
+                </p>
+                
+                <button class="begin-btn" id="beginJourneyBtn">
+                    Begin Our Love Journey
+                    <i class="fas fa-heart"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- QUIZ SECTION -->
+    <section id="quizSection" class="main-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How Well Do You Know Our Love?</h2>
+                <p class="section-subtitle">Let's explore the beautiful tapestry of our relationship</p>
+            </div>
+            
+            <div class="quiz-container">
+                <!-- Step 1 -->
+                <div class="quiz-step active" id="step1">
+                    <h3 class="quiz-question">What's my favorite thing about our relationship?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="Our endless conversations">
+                            <i class="fas fa-comments"></i>
+                            Our endless conversations
+                        </div>
+                        <div class="quiz-option" data-answer="Your beautiful smile">
+                            <i class="fas fa-smile"></i>
+                            Your beautiful smile
+                        </div>
+                        <div class="quiz-option" data-answer="How we understand each other">
+                            <i class="fas fa-heart"></i>
+                            How we understand each other
+                        </div>
+                        <div class="quiz-option" data-answer="Every single moment with you">
+                            <i class="fas fa-star"></i>
+                            Every single moment with you
+                        </div>
+                    </div>
+                    <div class="quiz-navigation">
+                        <div>
+                            <div class="quiz-progress">Question 1 of 5</div>
+                            <div class="quiz-progress-bar">
+                                <div class="quiz-progress-fill" id="quizProgress1" style="width: 20%"></div>
+                            </div>
+                        </div>
+                        <button class="quiz-next-btn" id="nextStep1">
+                            Continue
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="quiz-step" id="step2">
+                    <h3 class="quiz-question">What do I cherish most about you?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="Your kind heart">
+                            <i class="fas fa-heartbeat"></i>
+                            Your kind heart
+                        </div>
+                        <div class="quiz-option" data-answer="Your beautiful soul">
+                            <i class="fas fa-spa"></i>
+                            Your beautiful soul
+                        </div>
+                        <div class="quiz-option" data-answer="Your intelligence and wit">
+                            <i class="fas fa-brain"></i>
+                            Your intelligence and wit
+                        </div>
+                        <div class="quiz-option" data-answer="Everything about you">
+                            <i class="fas fa-infinity"></i>
+                            Everything about you siyempre
+                        </div>
+                    </div>
+                    <div class="quiz-navigation">
+                        <div>
+                            <div class="quiz-progress">Question 2 of 5</div>
+                            <div class="quiz-progress-bar">
+                                <div class="quiz-progress-fill" id="quizProgress2" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <button class="quiz-next-btn" id="nextStep2">
+                            Continue
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="quiz-step" id="step3">
+                    <h3 class="quiz-question">What's my favorite memory with you?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="Our first conversation">
+                            <i class="fas fa-comment-dots"></i>
+                            Our first conversation
+                        </div>
+                        <div class="quiz-option" data-answer="The moment I realized I love you">
+                            <i class="fas fa-bolt"></i>
+                            The moment I realized I love you
+                        </div>
+                        <div class="quiz-option" data-answer="Every laugh we've shared">
+                            <i class="fas fa-laugh"></i>
+                            Every laugh we've shared
+                        </div>
+                        <div class="quiz-option" data-answer="All of the above">
+                            <i class="fas fa-layer-group"></i>
+                            All of the above?
+                        </div>
+                    </div>
+                    <div class="quiz-navigation">
+                        <div>
+                            <div class="quiz-progress">Question 3 of 5</div>
+                            <div class="quiz-progress-bar">
+                                <div class="quiz-progress-fill" id="quizProgress3" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <button class="quiz-next-btn" id="nextStep3">
+                            Continue
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="quiz-step" id="step4">
+                    <h3 class="quiz-question">What makes our love special?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="Our deep connection">
+                            <i class="fas fa-link"></i>
+                            Our deep connection
+                        </div>
+                        <div class="quiz-option" data-answer="How we support each other">
+                            <i class="fas fa-hands-helping"></i>
+                            How we support each other
+                        </div>
+                        <div class="quiz-option" data-answer="Our mutual understanding">
+                            <i class="fas fa-handshake"></i>
+                            Our mutual understanding
+                        </div>
+                        <div class="quiz-option" data-answer="The way we grow together">
+                            <i class="fas fa-seedling"></i>
+                            The way we grow together
+                        </div>
+                    </div>
+                    <div class="quiz-navigation">
+                        <div>
+                            <div class="quiz-progress">Question 4 of 5</div>
+                            <div class="quiz-progress-bar">
+                                <div class="quiz-progress-fill" id="quizProgress4" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <button class="quiz-next-btn" id="nextStep4">
+                            Continue
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="quiz-step" id="step5">
+                    <h3 class="quiz-question">What does forever mean to me?</h3>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-answer="Spending eternity with you">
+                            <i class="fas fa-infinity"></i>
+                            Spending eternity with you
+                        </div>
+                        <div class="quiz-option" data-answer="Waking up next to you every day">
+                            <i class="fas fa-sun"></i>
+                            Waking up next to you every day
+                        </div>
+                        <div class="quiz-option" data-answer="Growing old together">
+                            <i class="fas fa-heart-circle"></i>
+                            Growing old together
+                        </div>
+                        <div class="quiz-option" data-answer="All of the above and more">
+                            <i class="fas fa-star-and-crescent"></i>
+                            All of the above and more
+                        </div>
+                    </div>
+                    <div class="quiz-navigation">
+                        <div>
+                            <div class="quiz-progress">Question 5 of 5</div>
+                            <div class="quiz-progress-bar">
+                                <div class="quiz-progress-fill" id="quizProgress5" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <button class="quiz-next-btn" id="nextStep5">
+                            See Results
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Results -->
+                <div class="quiz-step" id="quizResults" style="display: none;">
+                    <h3 class="quiz-question" style="color: var(--emerald);">Perfect Harmony 💚</h3>
+                    <p style="font-size: 1.4rem; color: var(--charcoal); margin-bottom: 50px; line-height: 1.8; text-align: center; padding: 0 20px;">
+                        Every answer reveals the depth of our connection. But what matters most isn't 
+                        getting the answers right—it's that you took this journey with me. Now bebi, let's 
+                        continue to the beautiful memories we've created together.
+                    </p>
+                    <div class="text-center" style="margin-top: 60px;">
+                        <button class="begin-btn" id="continueToMemoriesBtn">
+                            Continue to Our Memories
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- MEMORIES SECTION -->
+    <section id="memoriesSection" class="main-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Precious Moments</h2>
+                <p class="section-subtitle">Every memory with you is a treasure I keep in my heart</p>
+            </div>
+            
+            <div class="memories-container">
+                <div class="memories-slider">
+                    <div class="memories-track" id="memoriesTrack">
+                        <!-- Memories will be loaded here -->
+                        <div class="memory-slide">
+                            <div style="height: 100%; background: linear-gradient(135deg, var(--sage) 0%, var(--pistachio) 100%); display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-heart" style="font-size: 6rem; color: white; animation: gentlePulse 2s infinite ease-in-out;"></i>
+                            </div>
+                            <div class="memory-overlay">
+                                <h3 class="memory-title">Our Beautiful Memories</h3>
+                                <p class="memory-date">Will appear here as you upload them</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-nav" id="sliderNav">
+                    <!-- Dots will be added here -->
+                </div>
+                
+                <div class="text-center">
+                    <button class="begin-btn" id="continueToNotesBtn">
+                        Continue to Love Notes
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- LOVE NOTES SECTION -->
+    <section id="notesSection" class="main-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Letters From My Heart</h2>
+                <p class="section-subtitle">Words I've written just for you</p>
+            </div>
+            
+            <div class="notes-container">
+                <div class="notes-grid" id="notesGrid">
+                    <!-- Love notes will be loaded here -->
+                    <div class="note-card" style="--index: 0;">
+                        <span class="note-date">Today</span>
+                        <div class="note-content">
+                            You are the most amazing person I know. Every day with you feels like a beautiful dream that I never want to wake up from. I love you, more than words. And I will always love you with all I have.
+                        </div>
+                        <div class="note-icon">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button class="begin-btn" id="continueToMusicBtn">
+                        Continue to Our Song
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- MUSIC SECTION -->
+    <section id="musicSection" class="main-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: white;">Our Special Melody</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">A song that reminds me of you</p>
+            </div>
+            
+            <div class="player-container">
+                <div class="album-art">
+                    <i class="fas fa-music"></i>
+                </div>
+                
+                <div class="player-info">
+                    <h3 class="player-title" id="songTitle">Our Love Song</h3>
+                    <p class="player-artist" id="songArtist">A special melody for us</p>
+                </div>
+                
+                <div class="player-controls">
+                    <button class="player-btn" id="prevBtn">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    
+                    <button class="player-btn player-btn-main" id="playPauseBtn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    
+                    <button class="player-btn" id="nextBtn">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTimeDisplay">0:00</span>
+                        <span id="durationDisplay">0:00</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button class="begin-btn" id="continueToCountdownBtn" style="background: linear-gradient(135deg, var(--burgundy), #6a1e2a); border-color: var(--burgundy);">
+                        Continue to Countdown
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- COUNTDOWN SECTION -->
+    <section id="countdownSection" class="main-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Counting Every Moment</h2>
+                <p class="section-subtitle">Every second brings us closer to more beautiful memories</p>
+            </div>
+            
+            <div class="countdown-container">
+                <div class="countdown-grid">
+                    <div class="countdown-unit" style="--index: 0;">
+                        <div class="countdown-value" id="days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    
+                    <div class="countdown-unit" style="--index: 1;">
+                        <div class="countdown-value" id="hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    
+                    <div class="countdown-unit" style="--index: 2;">
+                        <div class="countdown-value" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    
+                    <div class="countdown-unit" style="--index: 3;">
+                        <div class="countdown-value" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <p style="font-size: 1.4rem; color: var(--charcoal); line-height: 1.8; margin-bottom: 50px; padding: 0 20px;">
+                        Time is precious, but every moment with you feels eternal. 
+                        This countdown isn't just to a date—it's a reminder that every second with you is worth celebrating.
+                    </p>
+                    
+                    <div>
+                        <button class="begin-btn" id="continueToProposalBtn">
+                            Continue to Final Question
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ULTRA HIGH QUALITY PROPOSAL SECTION -->
+    <section id="proposalSection" class="main-section">
+        <!-- Floating Hearts Background -->
+        <div class="floating-hearts" id="floatingHearts"></div>
+        
+        <div class="container">
+            <div class="proposal-container">
+                <h1 class="proposal-title">My Beautiful Baby,</h1>
+                
+                <p class="proposal-text">
+                    We've journeyed through memories, shared words from the heart, and listened to our special melody.
+                    Every moment has led us here.
+                </p>
+                
+                <p class="proposal-text">
+                    You are the most incredible person I've ever known. 
+                    Your smile lights up my world, your laughter is my favorite sound, 
+                    and your love is the greatest gift I've ever received.
+                </p>
+                
+                <div class="heart-divider">💚❤️💚</div>
+                
+                <div class="proposal-question-container">
+                    <div class="proposal-question" id="typedQuestion">
+                        <!-- The question will be typed here -->
+                    </div>
+                </div>
+                
+                <div class="proposal-buttons">
+                    <button class="proposal-btn" id="yesBtn">YES, Forever 💚</button>
+                    <button class="proposal-btn" id="noBtn">Hmm... Yoko nga</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SUCCESS SCREEN -->
+    <div id="successScreen">
+        <div class="success-content">
+            <div class="success-icon">💚❤️💚</div>
+            <h1 class="success-title">You Said YES!</h1>
+            <p class="success-text">
+                Thank you, my babyyy!! 
+                This is just the beginning of our beautiful forever. 
+                Every day with you is Valentine's Day.
+            </p>
+            <button class="begin-btn" id="replayJourneyBtn" style="background: linear-gradient(135deg, var(--burgundy), #6a1e2a); border-color: var(--burgundy);">
+                <i class="fas fa-redo"></i>
+                Relive Our Journey
+            </button>
+        </div>
+    </div>
+    
+    <!-- ADMIN UPLOAD PANEL - FIXED: Now fully clickable -->
+    <div id="adminPanel">
+        <div class="admin-header">
+            <div class="admin-title">Upload Content</div>
+            <button class="close-admin" id="closeAdminBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="photos">Photos</button>
+            <button class="admin-tab" data-tab="notes">Love Notes</button>
+            <button class="admin-tab" data-tab="music">Music</button>
+        </div>
+        
+        <!-- Photos Tab -->
+        <div class="admin-content active" id="photosTab">
+            <div class="upload-area" id="photoUploadArea">
+                <input type="file" id="photoInput" accept="image/*" multiple>
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <p>Click to upload photos</p>
+                <p style="font-size: 0.85rem; color: var(--sage); margin-top: 10px;">(JPG, PNG up to 5MB each)</p>
+            </div>
+            <div id="photoPreview" class="file-preview"></div>
+            <button class="admin-btn" id="uploadPhotosBtn">
+                <i class="fas fa-upload"></i>
+                Upload Selected Photos
+            </button>
+            
+            <div class="admin-instructions">
+                <strong>Easy Upload:</strong> Just select photos from your computer, then click upload. They'll appear in the Memories section automatically.
+            </div>
+        </div>
+        
+        <!-- Notes Tab -->
+        <div class="admin-content" id="notesTab">
+            <textarea class="admin-input" id="noteInput" placeholder="Write your love note here... Speak from your heart." rows="5"></textarea>
+            <button class="admin-btn" id="uploadNoteBtn">
+                <i class="fas fa-heart"></i>
+                Save Love Note
+            </button>
+            
+            <div class="admin-instructions">
+                <strong>Love Notes Tip:</strong> Write from your heart. These notes will appear in the Love Notes section for her to read.
+            </div>
+        </div>
+        
+        <!-- Music Tab - FIXED: Now fully clickable -->
+        <div class="admin-content" id="musicTab">
+            <div class="upload-area" id="musicUploadArea">
+                <input type="file" id="musicInput" accept="audio/*">
+                <div class="upload-icon">
+                    <i class="fas fa-file-audio"></i>
+                </div>
+                <p>Click to upload our song</p>
+                <p style="font-size: 0.85rem; color: var(--sage); margin-top: 10px;">(MP3, WAV up to 10MB)</p>
+            </div>
+            <div id="musicPreview" class="file-preview"></div>
+            <button class="admin-btn" id="uploadMusicBtn">
+                <i class="fas fa-music"></i>
+                Upload Our Song
+            </button>
+            
+            <div class="admin-instructions">
+                <strong>Music Note:</strong> Upload one special song that reminds you of her. It will play in the Music section.
+            </div>
+        </div>
+    </div>
+    
+    <!-- AUDIO ELEMENT -->
+    <audio id="backgroundMusic"></audio>
+    
+    <script>
+        // ========== INITIALIZATION ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('%c💚 ETERNAL LOVE WEBSITE 💚', 'color: #245a3e; font-size: 22px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);');
+            console.log('%cA sophisticated journey created with pure love', 'color: #7a9b76; font-size: 16px;');
+            
+            initializeWebsite();
+        });
+        
+        function initializeWebsite() {
+            // Hide loading screen after progress animation
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.visibility = 'hidden';
+                
+                // Make sections visible with animation
+                document.querySelectorAll('.main-section').forEach((section, index) => {
+                    setTimeout(() => {
+                        section.classList.add('visible');
+                    }, 300 + (index * 200));
+                });
+                
+                // Show real-time clock
+                updateRealTimeClock();
+                setInterval(updateRealTimeClock, 1000);
+                
+                showNotification('Welcome to our eternal love journey 💚', 'success');
+            }, 3500);
+            
+            // Setup all event listeners
+            setupEventListeners();
+            
+            // Initialize countdown
+            initializeCountdown();
+            
+            // Load saved data
+            loadSavedData();
+            
+            // Initialize music player
+            initializeMusicPlayer();
+            
+            // Initialize slider
+            initializeSlider();
+            
+            // Initialize floating hearts
+            createFloatingHearts();
+        }
+        
+        // ========== FLOATING HEARTS BACKGROUND ==========
+        function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            const heartCount = 30;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.innerHTML = '💚';
+                
+                // Random properties
+                const size = Math.random() * 1.5 + 1;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 10 + 15;
+                const colorHue = Math.random() * 60 - 30; // Slight color variation
+                
+                heart.style.fontSize = `${size}rem`;
+                heart.style.left = `${left}%`;
+                heart.style.animationDelay = `${delay}s`;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.filter = `hue-rotate(${colorHue}deg)`;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // ========== REAL-TIME CLOCK ==========
+        function updateRealTimeClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            });
+            document.getElementById('currentTime').textContent = timeString;
+        }
+        
+        // ========== SLIDER SYSTEM ==========
+        function initializeSlider() {
+            let currentSlide = 0;
+            const track = document.getElementById('memoriesTrack');
+            const nav = document.getElementById('sliderNav');
+            
+            // Create dots for existing slides
+            updateSliderDots();
+            
+            // Function to go to a specific slide
+            window.goToSlide = function(index) {
+                currentSlide = index;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                updateSliderDots();
+            };
+            
+            function updateSliderDots() {
+                const slides = track.children;
+                nav.innerHTML = '';
+                
+                for (let i = 0; i < slides.length; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = `slider-dot ${i === currentSlide ? 'active' : ''}`;
+                    dot.addEventListener('click', () => goToSlide(i));
+                    nav.appendChild(dot);
+                }
+            }
+            
+            // Auto slide every 8 seconds
+            setInterval(() => {
+                const slides = track.children;
+                if (slides.length > 1) {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    goToSlide(currentSlide);
+                }
+            }, 8000);
+        }
+        
+        // ========== EVENT LISTENERS ==========
+        function setupEventListeners() {
+            // Navigation clicks
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    showSection(targetId);
+                    
+                    // Special handling for proposal section
+                    if (targetId === 'proposalSection') {
+                        startTypingEffect();
+                    }
+                });
+            });
+            
+            // Begin journey
+            document.getElementById('beginJourneyBtn').addEventListener('click', beginJourney);
+            
+            // Quiz navigation
+            document.getElementById('nextStep1')?.addEventListener('click', () => showQuizStep(2));
+            document.getElementById('nextStep2')?.addEventListener('click', () => showQuizStep(3));
+            document.getElementById('nextStep3')?.addEventListener('click', () => showQuizStep(4));
+            document.getElementById('nextStep4')?.addEventListener('click', () => showQuizStep(5));
+            document.getElementById('nextStep5')?.addEventListener('click', showQuizResults);
+            
+            document.getElementById('continueToMemoriesBtn')?.addEventListener('click', () => showSection('memoriesSection'));
+            document.getElementById('continueToNotesBtn')?.addEventListener('click', () => showSection('notesSection'));
+            document.getElementById('continueToMusicBtn')?.addEventListener('click', () => showSection('musicSection'));
+            document.getElementById('continueToCountdownBtn')?.addEventListener('click', () => showSection('countdownSection'));
+            document.getElementById('continueToProposalBtn')?.addEventListener('click', () => {
+                showSection('proposalSection');
+                startTypingEffect();
+            });
+            
+            // Quiz option selection
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const step = this.closest('.quiz-step');
+                    step.querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    
+                    // Enable next button
+                    const nextBtn = step.querySelector('.quiz-next-btn');
+                    if (nextBtn) nextBtn.disabled = false;
+                });
+            });
+            
+            // Proposal buttons
+            document.getElementById('yesBtn').addEventListener('click', handleYes);
+            document.getElementById('noBtn').addEventListener('click', handleNo);
+            
+            // Success screen
+            document.getElementById('replayJourneyBtn').addEventListener('click', replayJourney);
+            
+            // Music player
+            document.getElementById('playPauseBtn').addEventListener('click', togglePlayback);
+            document.getElementById('progressBar').addEventListener('click', seekAudio);
+            
+            // Admin panel
+            document.getElementById('adminToggleBtn').addEventListener('click', toggleAdminPanel);
+            document.getElementById('closeAdminBtn').addEventListener('click', closeAdminPanel);
+            
+            // Admin tabs
+            document.querySelectorAll('.admin-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.dataset.tab;
+                    
+                    // Update active tab
+                    document.querySelectorAll('.admin-tab').forEach(t => {
+                        t.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Show active content
+                    document.querySelectorAll('.admin-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(`${tabId}Tab`).classList.add('active');
+                });
+            });
+            
+            // FIXED: Upload areas now fully clickable
+            // Photo upload
+            const photoInput = document.getElementById('photoInput');
+            const photoUploadArea = document.getElementById('photoUploadArea');
+            
+            photoInput.addEventListener('change', previewPhotos);
+            photoUploadArea.addEventListener('click', function(e) {
+                if (e.target !== photoInput) {
+                    photoInput.click();
+                }
+            });
+            
+            // Music upload - FIXED
+            const musicInput = document.getElementById('musicInput');
+            const musicUploadArea = document.getElementById('musicUploadArea');
+            
+            musicInput.addEventListener('change', previewMusic);
+            musicUploadArea.addEventListener('click', function(e) {
+                if (e.target !== musicInput) {
+                    musicInput.click();
+                }
+            });
+            
+            // Upload buttons
+            document.getElementById('uploadPhotosBtn').addEventListener('click', uploadPhotos);
+            document.getElementById('uploadNoteBtn').addEventListener('click', uploadNote);
+            document.getElementById('uploadMusicBtn').addEventListener('click', uploadMusic);
+            
+            // Window scroll
+            window.addEventListener('scroll', handleScroll);
+            
+            // Initialize quiz next buttons as disabled
+            document.querySelectorAll('.quiz-next-btn').forEach(btn => {
+                btn.disabled = true;
+            });
+        }
+        
+        // ========== SECTION NAVIGATION ==========
+        function showSection(sectionId) {
+            // Scroll to section
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.style.fontWeight = 'normal';
+                });
+                const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                if (activeLink) activeLink.style.fontWeight = '600';
+                
+                // Add visible class if not already
+                setTimeout(() => {
+                    element.classList.add('visible');
+                }, 300);
+            }
+        }
+        
+        function beginJourney() {
+            showSection('quizSection');
+            showNotification('Let\'s start with our love quiz! 💚', 'success');
+        }
+        
+        function replayJourney() {
+            document.getElementById('successScreen').style.display = 'none';
+            showSection('welcomeSection');
+        }
+        
+        // ========== TYPING EFFECT FOR PROPOSAL QUESTION ==========
+        function startTypingEffect() {
+            const questionElement = document.getElementById('typedQuestion');
+            const questionText = "So now, I just want to ask if will you be my Valentine?";
+            
+            // Clear existing content
+            questionElement.innerHTML = '';
+            
+            let index = 0;
+            
+            function typeCharacter() {
+                if (index < questionText.length) {
+                    // Add the next character
+                    const char = questionText.charAt(index);
+                    const span = document.createElement('span');
+                    span.textContent = char;
+                    span.style.animation = 'textRevealProposal 0.1s both';
+                    questionElement.appendChild(span);
+                    
+                    index++;
+                    
+                    // Random delay between characters for natural typing effect
+                    const delay = Math.random() * 50 + 50;
+                    setTimeout(typeCharacter, delay);
+                } else {
+                    // Add blinking cursor at the end
+                    const cursor = document.createElement('span');
+                    cursor.className = 'typing-cursor';
+                    questionElement.appendChild(cursor);
+                }
+            }
+            
+            // Start typing after a short delay
+            setTimeout(typeCharacter, 500);
+        }
+        
+        // ========== QUIZ SYSTEM ==========
+        function showQuizStep(stepNumber) {
+            // Hide all steps
+            document.querySelectorAll('.quiz-step').forEach(step => {
+                step.style.display = 'none';
+                step.classList.remove('active');
+            });
+            
+            // Show selected step
+            const step = document.getElementById(`step${stepNumber}`);
+            if (step) {
+                step.style.display = 'block';
+                setTimeout(() => {
+                    step.classList.add('active');
+                }, 10);
+            } else {
+                showQuizResults();
+            }
+        }
+        
+        function showQuizResults() {
+            // Hide all steps
+            document.querySelectorAll('.quiz-step').forEach(step => {
+                step.style.display = 'none';
+                step.classList.remove('active');
+            });
+            
+            // Show results
+            const results = document.getElementById('quizResults');
+            results.style.display = 'block';
+            setTimeout(() => {
+                results.classList.add('active');
+            }, 10);
+            
+            // Create celebration
+            createMiniCelebration('quizSection');
+        }
+        
+        function createMiniCelebration(sectionId) {
+            const section = document.getElementById(sectionId);
+            const colors = ['#245a3e', '#8b2635', '#b38b59', '#7a9b76'];
+            
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💚';
+                heart.style.position = 'absolute';
+                heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.opacity = '0';
+                heart.style.zIndex = '10';
+                heart.style.pointerEvents = 'none';
+                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                section.appendChild(heart);
+                
+                // Animate
+                const animation = heart.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 0 },
+                    { transform: `translateY(${Math.random() * 100 - 150}px) rotate(${Math.random() * 360}deg)`, opacity: 1 },
+                    { transform: `translateY(${Math.random() * -200 - 200}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 2000 + 1500,
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                });
+                
+                animation.onfinish = () => heart.remove();
+            }
+        }
+        
+        // ========== PROPOSAL BUTTONS ==========
+        let noClickCount = 0;
+        const noMessages = [
+            "Are you sure, my woman?",
+            "My heart would be so sad...",
+            "Please think about it?",
+            "I'll love you anyway...",
+            "You're breaking my heart 💔",
+            "I'll keep asking forever",
+            "My love is endless",
+            "Just kidding, say yes? 😊",
+            "I'm not giving up",
+            "Forever is a long no",
+            "You're my everything",
+            "I'll ask a million times",
+            "Pretty please? 🥺",
+            "With all my heart? 💚",
+            "For us? 💕",
+            "Okay, I choose YES for us! 💚"
+        ];
+        
+        function handleNo() {
+            const noBtn = document.getElementById('noBtn');
+            const container = document.querySelector('.proposal-container');
+            
+            // Calculate random position within container
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = noBtn.getBoundingClientRect();
+            
+            const maxX = containerRect.width - btnRect.width - 40;
+            const maxY = containerRect.height - btnRect.height - 40;
+            
+            const randomX = Math.max(20, Math.floor(Math.random() * maxX));
+            const randomY = Math.max(20, Math.floor(Math.random() * maxY));
+            
+            // Move button
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+            
+            // Change text
+            noClickCount++;
+            const messageIndex = Math.min(noClickCount - 1, noMessages.length - 1);
+            noBtn.textContent = noMessages[messageIndex];
+            
+            // Add animation
+            noBtn.style.animation = 'none';
+            setTimeout(() => {
+                noBtn.style.animation = 'gentlePulse 0.5s ease';
+            }, 10);
+            
+            // After many tries, auto yes
+            if (noClickCount >= noMessages.length) {
+                setTimeout(() => {
+                    showNotification("I'm choosing YES for us! 💚", 'success');
+                    handleYes();
+                }, 800);
+            }
+            
+            showNotification('I will keep trying for us! 💕', 'info');
+        }
+        
+        function handleYes() {
+            // Show success screen
+            document.getElementById('successScreen').style.display = 'flex';
+            
+            // Save to localStorage
+            localStorage.setItem('valentineAccepted', 'true');
+            localStorage.setItem('acceptanceDate', new Date().toISOString());
+            
+            // Create celebration effect
+            createCelebration();
+            
+            showNotification('You said YES! Our forever begins 💚❤️', 'success');
+        }
+        
+        function createCelebration() {
+            const colors = ['#245a3e', '#8b2635', '#b38b59', '#7a9b76'];
+            
+            for (let i = 0; i < 80; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💚';
+                heart.style.position = 'fixed';
+                heart.style.fontSize = Math.random() * 40 + 25 + 'px';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '-50px';
+                heart.style.opacity = '0';
+                heart.style.zIndex = '9999';
+                heart.style.pointerEvents = 'none';
+                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                heart.style.filter = 'drop-shadow(0 5px 15px rgba(0,0,0,0.3))';
+                
+                document.body.appendChild(heart);
+                
+                // Animate
+                const animation = heart.animate([
+                    { transform: 'translateY(0) rotate(0deg) scale(0.5)', opacity: 0 },
+                    { transform: `translateY(${Math.random() * 100 + 100}vh) rotate(${Math.random() * 360}deg) scale(1)`, opacity: 1 },
+                    { transform: `translateY(${Math.random() * 100 + 200}vh) rotate(${Math.random() * 720}deg) scale(0.5)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 4000 + 3000,
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                });
+                
+                animation.onfinish = () => heart.remove();
+            }
+            
+            // Add background music if available
+            const audio = document.getElementById('backgroundMusic');
+            if (audio.src) {
+                audio.play().catch(e => console.log("Autoplay prevented, user interaction needed"));
+            }
+        }
+        
+        // ========== MUSIC PLAYER - FIXED: Now working perfectly ==========
+        let isPlaying = false;
+        let currentAudio = document.getElementById('backgroundMusic');
+        let currentSong = null;
+        let selectedMusicFile = null;
+        
+        function initializeMusicPlayer() {
+            currentAudio.addEventListener('loadedmetadata', function() {
+                document.getElementById('durationDisplay').textContent = formatTime(currentAudio.duration);
+            });
+            
+            currentAudio.addEventListener('timeupdate', function() {
+                document.getElementById('currentTimeDisplay').textContent = formatTime(currentAudio.currentTime);
+                const progressPercent = (currentAudio.currentTime / currentAudio.duration) * 100 || 0;
+                document.getElementById('progress').style.width = `${progressPercent}%`;
+            });
+            
+            currentAudio.addEventListener('ended', function() {
+                isPlaying = false;
+                document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-play"></i>';
+            });
+        }
+        
+        function togglePlayback() {
+            if (!currentSong && !currentAudio.src) {
+                showNotification('Upload a special song for us first! 🎵', 'info');
+                toggleAdminPanel();
+                document.querySelector('.admin-tab[data-tab="music"]').click();
+                return;
+            }
+            
+            if (isPlaying) {
+                currentAudio.pause();
+                document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                currentAudio.play().then(() => {
+                    document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-pause"></i>';
+                }).catch(error => {
+                    console.error('Playback error:', error);
+                    showNotification('Click play again to start our song 🎵', 'info');
+                });
+            }
+            
+            isPlaying = !isPlaying;
+        }
+        
+        function seekAudio(e) {
+            if (!currentSong && !currentAudio.src) return;
+            
+            const progressBar = document.getElementById('progressBar');
+            const clickPosition = e.offsetX;
+            const progressBarWidth = progressBar.offsetWidth;
+            const seekTime = (clickPosition / progressBarWidth) * currentAudio.duration;
+            
+            currentAudio.currentTime = seekTime;
+        }
+        
+        function formatTime(seconds) {
+            if (!seconds || isNaN(seconds)) return "0:00";
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        // ========== COUNTDOWN ==========
+        function initializeCountdown() {
+            function updateCountdown() {
+                const now = new Date();
+                let valentineYear = now.getFullYear();
+                
+                // If Valentine's Day has passed, target next year
+                let valentineDate = new Date(valentineYear, 1, 14);
+                if (now > valentineDate) {
+                    valentineYear++;
+                    valentineDate = new Date(valentineYear, 1, 14);
+                }
+                
+                const diff = valentineDate - now;
+                
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+        
+        // ========== ADMIN UPLOAD SYSTEM - FIXED: Now fully working ==========
+        let selectedPhotos = [];
+        
+        function previewPhotos(event) {
+            const files = event.target.files;
+            selectedPhotos = Array.from(files);
+            const preview = document.getElementById('photoPreview');
+            
+            if (selectedPhotos.length > 0) {
+                // Show upload area click animation
+                const uploadArea = document.getElementById('photoUploadArea');
+                uploadArea.classList.add('clicked');
+                setTimeout(() => {
+                    uploadArea.classList.remove('clicked');
+                }, 500);
+                
+                // Show preview
+                preview.innerHTML = '';
+                preview.classList.add('show');
+                
+                // Show file count
+                const countInfo = document.createElement('div');
+                countInfo.className = 'file-info';
+                countInfo.innerHTML = `
+                    <div class="file-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <div class="file-details">
+                        <div class="file-name">${selectedPhotos.length} photo(s) selected</div>
+                        <div class="file-size">Ready to upload</div>
+                    </div>
+                `;
+                preview.appendChild(countInfo);
+                
+                showNotification(`Selected ${selectedPhotos.length} photo(s)`, 'success');
+            } else {
+                preview.classList.remove('show');
+            }
+        }
+        
+        function uploadPhotos() {
+            if (selectedPhotos.length === 0) {
+                showNotification('Please select photos first', 'error');
+                return;
+            }
+            
+            let uploadedCount = 0;
+            const maxPhotos = 12;
+            
+            // Get existing photos
+            let existingPhotos = JSON.parse(localStorage.getItem('ourMemories') || '[]');
+            
+            // Limit total photos
+            if (existingPhotos.length + selectedPhotos.length > maxPhotos) {
+                showNotification(`Maximum ${maxPhotos} photos allowed`, 'error');
+                return;
+            }
+            
+            selectedPhotos.forEach((file, index) => {
+                if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                    showNotification(`${file.name} is too large (max 5MB)`, 'error');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const photoData = {
+                        id: 'photo_' + Date.now() + '_' + index,
+                        dataUrl: e.target.result,
+                        name: file.name,
+                        date: new Date().toISOString(),
+                        title: `Memory ${existingPhotos.length + uploadedCount + 1}`
+                    };
+                    
+                    existingPhotos.push(photoData);
+                    uploadedCount++;
+                    
+                    // If all photos processed, save and reload
+                    if (uploadedCount === Math.min(selectedPhotos.length, maxPhotos - existingPhotos.length + uploadedCount)) {
+                        localStorage.setItem('ourMemories', JSON.stringify(existingPhotos));
+                        loadSavedData();
+                        showNotification(`Uploaded ${uploadedCount} photo(s) successfully! 💚`, 'success');
+                        selectedPhotos = [];
+                        document.getElementById('photoInput').value = '';
+                        document.getElementById('photoPreview').classList.remove('show');
+                    }
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+        
+        function uploadNote() {
+            const noteInput = document.getElementById('noteInput');
+            const noteText = noteInput.value.trim();
+            
+            if (!noteText) {
+                showNotification('Please write a love note first', 'error');
+                return;
+            }
+            
+            // Get existing notes
+            let existingNotes = JSON.parse(localStorage.getItem('ourNotes') || '[]');
+            
+            const noteData = {
+                id: 'note_' + Date.now(),
+                text: noteText,
+                date: new Date().toISOString()
+            };
+            
+            existingNotes.unshift(noteData); // Add to beginning
+            localStorage.setItem('ourNotes', JSON.stringify(existingNotes));
+            
+            // Clear input and reload
+            noteInput.value = '';
+            loadSavedData();
+            
+            showNotification('Love note saved successfully! 💚', 'success');
+        }
+        
+        function previewMusic(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('musicPreview');
+            
+            if (file) {
+                if (file.size > 10 * 1024 * 1024) {
+                    showNotification('File too large (max 10MB)', 'error');
+                    document.getElementById('musicInput').value = '';
+                    return;
+                }
+                
+                // Show upload area click animation
+                const uploadArea = document.getElementById('musicUploadArea');
+                uploadArea.classList.add('clicked');
+                setTimeout(() => {
+                    uploadArea.classList.remove('clicked');
+                }, 500);
+                
+                selectedMusicFile = file;
+                
+                // Show preview
+                preview.innerHTML = '';
+                preview.classList.add('show');
+                
+                const fileSize = (file.size / (1024 * 1024)).toFixed(2);
+                const fileName = file.name.length > 40 ? file.name.substring(0, 40) + "..." : file.name;
+                
+                const fileInfo = document.createElement('div');
+                fileInfo.className = 'file-info';
+                fileInfo.innerHTML = `
+                    <div class="file-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="file-details">
+                        <div class="file-name">${fileName}</div>
+                        <div class="file-size">${fileSize} MB • Ready to upload</div>
+                    </div>
+                `;
+                preview.appendChild(fileInfo);
+                
+                showNotification('Song selected! Ready to upload 🎵', 'success');
+            } else {
+                preview.classList.remove('show');
+            }
+        }
+        
+        // FIXED: Music upload function
+        function uploadMusic() {
+            if (!selectedMusicFile) {
+                showNotification('Please select a song first', 'error');
+                return;
+            }
+            
+            const file = selectedMusicFile;
+            
+            if (file.size > 10 * 1024 * 1024) {
+                showNotification('File too large (max 10MB)', 'error');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const songData = {
+                    id: 'song_' + Date.now(),
+                    dataUrl: e.target.result,
+                    name: file.name,
+                    date: new Date().toISOString(),
+                    size: file.size
+                };
+                
+                // Save to localStorage
+                localStorage.setItem('ourSong', JSON.stringify(songData));
+                
+                // Load the song into the player
+                loadSong(songData);
+                
+                // Clear selection
+                selectedMusicFile = null;
+                document.getElementById('musicInput').value = '';
+                document.getElementById('musicPreview').classList.remove('show');
+                
+                showNotification('Song uploaded successfully! 🎵', 'success');
+                
+                // Auto-play if user wants
+                setTimeout(() => {
+                    if (confirm("Would you like to play the song now?")) {
+                        currentAudio.play().then(() => {
+                            isPlaying = true;
+                            document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-pause"></i>';
+                        }).catch(err => {
+                            console.log("Autoplay prevented");
+                        });
+                    }
+                }, 500);
+            };
+            
+            reader.onerror = function() {
+                showNotification('Error reading the file. Please try again.', 'error');
+            };
+            
+            reader.readAsDataURL(file);
+        }
+        
+        function loadSong(songData) {
+            if (!songData || !songData.dataUrl) {
+                console.log("No song data to load");
+                return;
+            }
+            
+            currentSong = songData;
+            currentAudio.src = songData.dataUrl;
+            
+            // Update display
+            const songName = songData.name.replace(/\.[^/.]+$/, "");
+            document.getElementById('songTitle').textContent = 
+                songName.length > 30 ? songName.substring(0, 30) + "..." : songName;
+            document.getElementById('songArtist').textContent = 'Our Special Song';
+            
+            // Reset player state
+            isPlaying = false;
+            document.getElementById('playPauseBtn').innerHTML = '<i class="fas fa-play"></i>';
+            document.getElementById('currentTimeDisplay').textContent = '0:00';
+            document.getElementById('progress').style.width = '0%';
+            
+            // Wait for metadata to load
+            currentAudio.onloadedmetadata = function() {
+                document.getElementById('durationDisplay').textContent = formatTime(currentAudio.duration);
+            };
+        }
+        
+        // ========== LOAD SAVED DATA ==========
+        function loadSavedData() {
+            // Load photos
+            const savedPhotos = JSON.parse(localStorage.getItem('ourMemories') || '[]');
+            const memoriesTrack = document.getElementById('memoriesTrack');
+            
+            if (savedPhotos.length > 0) {
+                memoriesTrack.innerHTML = '';
+                
+                savedPhotos.forEach((photo, index) => {
+                    const memorySlide = document.createElement('div');
+                    memorySlide.className = 'memory-slide';
+                    
+                    memorySlide.innerHTML = `
+                        <img src="${photo.dataUrl}" alt="${photo.name}" class="memory-img">
+                        <div class="memory-overlay">
+                            <h3 class="memory-title">${photo.title}</h3>
+                            <p class="memory-date">${new Date(photo.date).toLocaleDateString('en-US', { 
+                                year: 'numeric', 
+                                month: 'long', 
+                                day: 'numeric' 
+                            })}</p>
+                        </div>
+                    `;
+                    
+                    memoriesTrack.appendChild(memorySlide);
+                });
+                
+                // Reinitialize slider with new slides
+                initializeSlider();
+            }
+            
+            // Load notes
+            const savedNotes = JSON.parse(localStorage.getItem('ourNotes') || '[]');
+            const notesGrid = document.getElementById('notesGrid');
+            
+            if (savedNotes.length > 0) {
+                notesGrid.innerHTML = '';
+                
+                savedNotes.forEach((note, index) => {
+                    const noteDate = new Date(note.date);
+                    const formattedDate = noteDate.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                    
+                    const noteCard = document.createElement('div');
+                    noteCard.className = 'note-card';
+                    noteCard.style.setProperty('--index', index % 3);
+                    
+                    noteCard.innerHTML = `
+                        <span class="note-date">${formattedDate}</span>
+                        <div class="note-content">${note.text}</div>
+                        <div class="note-icon">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+                    `;
+                    
+                    notesGrid.appendChild(noteCard);
+                });
+            } else {
+                // Show default note
+                const notesGrid = document.getElementById('notesGrid');
+                const noteCard = document.createElement('div');
+                noteCard.className = 'note-card';
+                noteCard.style.setProperty('--index', 0);
+                noteCard.innerHTML = `
+                    <span class="note-date">Today</span>
+                    <div class="note-content">
+                        You are the most amazing person I know. Every day with you feels like a beautiful dream that I never want to wake up from. I love you, more than words. And I will always love you with all I have.
+                    </div>
+                    <div class="note-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                `;
+                notesGrid.appendChild(noteCard);
+            }
+            
+            // Load song
+            try {
+                const savedSong = localStorage.getItem('ourSong');
+                if (savedSong) {
+                    const songData = JSON.parse(savedSong);
+                    if (songData && songData.dataUrl) {
+                        loadSong(songData);
+                    }
+                }
+            } catch (e) {
+                console.log("Error loading saved song:", e);
+                localStorage.removeItem('ourSong');
+            }
+        }
+        
+        // ========== ADMIN PANEL FUNCTIONS ==========
+        function toggleAdminPanel() {
+            const panel = document.getElementById('adminPanel');
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        function closeAdminPanel() {
+            document.getElementById('adminPanel').style.display = 'none';
+        }
+        
+        // ========== NOTIFICATION SYSTEM ==========
+        function showNotification(message, type = 'info') {
+            // Remove existing notifications
+            document.querySelectorAll('.custom-notification').forEach(n => n.remove());
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = 'custom-notification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 120px;
+                right: 30px;
+                background: ${type === 'error' ? 'var(--burgundy)' : type === 'success' ? 'var(--emerald)' : 'var(--sage)'};
+                color: white;
+                padding: 20px 30px;
+                border-radius: 15px;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+                z-index: 9999;
+                animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                max-width: 400px;
+                font-family: 'Montserrat', sans-serif;
+                border-left: 5px solid ${type === 'error' ? '#6a1e2a' : type === 'success' ? '#1a4632' : '#5a7a56'};
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                backdrop-filter: blur(10px);
+            `;
+            
+            notification.innerHTML = `
+                <i class="fas fa-${type === 'error' ? 'exclamation-circle' : type === 'success' ? 'heart' : 'info-circle'}" 
+                   style="font-size: 1.5rem;"></i>
+                <span style="font-weight: 500;">${message}</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove after 5 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 5000);
+        }
+        
+        // ========== UTILITY FUNCTIONS ==========
+        function handleScroll() {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                nav.style.background = 'rgba(247, 250, 243, 0.98)';
+                nav.style.height = '70px';
+                nav.style.backdropFilter = 'blur(20px)';
+            } else {
+                nav.style.boxShadow = 'none';
+                nav.style.background = 'rgba(247, 250, 243, 0.97)';
+                nav.style.height = '80px';
+                nav.style.backdropFilter = 'blur(15px)';
+            }
+            
+            // Check section visibility
+            document.querySelectorAll('.main-section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.75 && rect.bottom > 0) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+        
+        // Initialize scroll handler
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial call
+        
+        // Admin instructions
+        console.log(`
+%c📝 UPLOAD INSTRUCTIONS:
+
+1. Click "Upload Content" (top right)
+2. Choose tab:
+   - Photos: Select up to 12 photos (max 5MB each)
+   - Love Notes: Write heartfelt messages
+   - Music: Upload one special song (max 10MB)
+
+3. Click upload button
+4. Content appears automatically on the website
+
+💚 Everything saves to browser storage
+💚 Only she can see what you upload
+💚 No accounts, no passwords, just pure love
+
+        `, 'color: #245a3e; background: #f7faf3; padding: 20px; border-radius: 10px; font-size: 14px; border: 2px solid var(--pistachio);');
+        
+        console.log('%c💚 WEBSITE READY 💚', 'color: #245a3e; font-size: 20px; font-weight: bold; padding: 10px; background: var(--pistachio); border-radius: 5px;');
+    </script>
+</body>
+</html>
+
+
